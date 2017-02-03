@@ -9,9 +9,6 @@
 <script src="{{ URL::asset("assets/chat/moment-2.2.1.js") }}"></script>
 <script src="{{ URL::asset("js/jquery.app.js") }}"></script>
 
-
-
-<script src="{{ URL::asset("js/app.js") }}"></script>
-
 <!-- Vue.js -->
-<!-- <script src="{{ URL::asset("js/vue.js") }}"></script> -->
+<script src="{{ URL::asset("js/app.js") }}"></script>
+<script src="{{ URL::asset("js/vue.js") }}"></script>
