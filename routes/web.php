@@ -23,5 +23,14 @@ Route::group(['prefix' => 'cms'],  function () {
     });
 });
 
+Route::get('/', 'PagesController@homepage');
+Route::get('/agenda', 'PagesController@agenda');
+Route::get('/nieuws', 'PagesController@nieuws');
+Route::get('/fotos', 'PagesController@fotos');
+Route::get('/over-ons', 'PagesController@over_ons');
+Route::get('/ruimtes', 'PagesController@ruimtes');
+Route::get('/contact', 'PagesController@contact');
+
+
 Route::auth();
 Auth::routes();

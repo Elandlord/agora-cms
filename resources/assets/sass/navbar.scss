@@ -10,10 +10,6 @@
 
 }
 
-
-
-
-
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     
     background-color: $dark-color;
@@ -41,8 +37,33 @@
 
 }
 
-
 .navbar{
-	position:relative;
-	
+    position: relative !important;
 }
+
+.logo-center{
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  z-index:100;
+  top: -10%;
+}
+
+.logo-center img{
+    width:200px;
+
+}
+
+.text-over-image{
+    position: relative;
+    width: 100%;
+}
+
+.text-over-image h2{
+    color: $light-color;
+    font-size:150px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    top: 30%;
+}   

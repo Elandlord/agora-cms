@@ -97,9 +97,9 @@
 
 $light-color: white;
 $dark-color: #3F3F3F;
-$main-color : #46386F;
-$secondary-color : #F7BB17;
-$accent-color : #EDF4F4;
+$main-color : #D01D3C;
+$secondary-color : #383838;
+$accent-color : #1D80BB;
 
 
 $background-color-light: white;
@@ -1734,4 +1734,15 @@ img .image-greyscale-none{ -webkit-filter: greyscale(0%); filter: grayscale(0%);
 	.xs-inline-block{ display: inline-block; }
 	.xs-inline{ display: inline; }
 
+}
+
+.placeholder-nav{
+	height:800px;
+	background:url('../images/agora-banner.jpg') no-repeat center center;
+	background-size:cover;  
+
+	 /* Workaround for some mobile browsers */
+	min-height:100%;    
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
