@@ -16,25 +16,9 @@
         </div>
       </div>
 
-      <!-- search form (Optional) -->
-<!--       <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> -->
-      <!-- /.search form -->
-      <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <li class="header">CRM Beheer</li>
         <!-- CUSTOM NAVIGATION GOES BETWEEN THIS AND -->
-
-
-
-
 
         <!-- ////////////  THIS  ////////////////////// -->
 
@@ -58,16 +42,34 @@
           ]
         ])
 
-
         <!-- CUSTOM NAVIGATION LINKS GO UNDERNEATH HERE -->
 
+        <!--  Agenda events -->
+        @include('cms.navigation.navigation-dropdown', [
+          'title' => "Agenda",
+          'icon' => 'ion ion-document',
+          'linkGroup' => [
+            [
+              'header' => "Agenda activiteiten",
+              'cms/event' => 'Overzicht',
+              'cms/event/create' => 'Toevoegen',
+            ],
+          ]
+        ])
 
-
-
-
+        <!--  News -->
+        @include('cms.navigation.navigation-dropdown', [
+          'title' => "Nieuws",
+          'icon' => 'ion ion-document',
+          'linkGroup' => [
+            [
+              'header' => "Nieuwsberichten",
+              'cms/news' => 'Overzicht',
+              'cms/news/create' => 'Toevoegen',
+            ],
+          ]
+        ])
 
       </ul>
-      <!-- /.sidebar-menu -->
     </section>
-    <!-- /.sidebar -->
   </aside>
