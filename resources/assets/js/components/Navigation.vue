@@ -13,9 +13,9 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse bg-main navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav space-outside-left-xl">
+        <ul class="nav navbar-nav lg-space-outside-left-xl">
           <li>
-            <router-link tag="li" class='space-inside-md' to="/agenda" exact>
+            <router-link tag="li" class='space-outside-left-md space-inside-md' to="/agenda" exact>
               <a class="bg-main text-color-light font-md">AGENDA<span class="sr-only">(current)</span></a>
             </router-link>
           </li>
