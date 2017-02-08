@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-secondary space-inside-md">
+    <footer class="achtergrond-content space-inside-md">
         <div class="container">
             <div class="row ">          
                 <div class="col-lg-12">

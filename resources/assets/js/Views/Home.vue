@@ -13,7 +13,7 @@
 			</div>
 		</div>
 
-		<div class='bg-secondary container-fluid' style='min-height:500px;'>
+		<div class='achtergrond-content container-fluid' style='min-height:500px;'>
 			<div class='row'>
 
 			</div>
