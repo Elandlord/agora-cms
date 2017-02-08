@@ -13,7 +13,8 @@ use File;
 
 class Page extends Model
 {
-	private $directory = '/resources/views/pages';
+	private $directory = '/resources/assets/js/views';
+    const FILE_EXTENSION = '.vue';
 	private $slot;
 
     protected $fillable = [
@@ -34,7 +35,7 @@ class Page extends Model
 
     public function getContents()
     {
-		return FileHelper::getFileContents($this->directory, $this->name . '.blade.php');
+		return FileHelper::getFileContents($this->directory, $this->name . self::FILE_EXTENSION);
     }
 
     public function sections()
@@ -67,7 +68,7 @@ class Page extends Model
     private static function extractPage($file)
     {
     	$page = new Page;
-    	$page->name = str_replace('.blade.php', '', $file->getFilename());
+    	$page->name = str_replace(self::FILE_EXTENSION, '', $file->getFilename());
     	return $page;
     }
 

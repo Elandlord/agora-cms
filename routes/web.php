@@ -9,7 +9,7 @@ Route::group(['prefix' => 'cms'],  function () {
 
     	// --- CORE ROUTES ONLY
         Route::get('/logout', 'LogOutController@index');
-        Route::get('/', 'CmsController@index');
+        Route::get('/', 'DashboardController@index');
 
         // ----------------- GENERIC ROUTES FOR EVERY PROJECT GO HERE ----------
 

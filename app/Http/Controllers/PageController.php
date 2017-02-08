@@ -40,7 +40,7 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $directory = "/resources/views/pages";
+        $directory = "/resources/assets/js/views";
         Page::createFromDirectory($directory);
 
         return redirect('cms/page');

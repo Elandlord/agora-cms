@@ -34,11 +34,6 @@
               'cms/page' => 'Overzicht',
               'cms/page/create' => 'Toevoegen',
             ],
-            [
-              'header' => 'Secties',
-              'cms/section' => 'Overzicht',
-              'cms/section/create' => 'Toevoegen',
-            ]
           ]
         ])
 
