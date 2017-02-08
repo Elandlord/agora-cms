@@ -18,8 +18,11 @@
     	<div id="app">
 
             @include('layouts.navigation')
-	
-            @yield('content')
+
+
+            <router-view>
+                        
+            </router-view>
 
             @include('partials.footer')
 

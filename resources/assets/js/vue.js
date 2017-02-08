@@ -1,3 +1,5 @@
+import VueRouter from 'vue-router';
+
 Vue.component('image-display', require('./components/ImageDisplay.vue'));
 Vue.component('image-uploader', require('./components/ImageUploader.vue'));
 Vue.component('cropper', require('./components/Cropper.vue'));
@@ -10,7 +12,10 @@ Vue.component('banner', require('./components/Banner.vue'));
 Vue.component('bottom-footer', require('./components/Footer.vue'));
 Vue.component('info-footer', require('./components/InfoFooter.vue'));
 
+import router from './routes';
 
 new Vue({
-    el: '#app'
+    el: '#app',
+
+    router
 });

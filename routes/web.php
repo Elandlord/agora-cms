@@ -24,13 +24,13 @@ Route::group(['prefix' => 'cms'],  function () {
     });
 });
 
-Route::get('/', 'HomepageController@index');
-Route::get('/agenda', 'AgendaController@index');
-Route::get('/nieuws', 'NieuwsController@index');
-Route::get('/fotos', 'FotosController@index');
-Route::get('/over-ons', 'OverOnsController@index');
-Route::get('/ruimtes', 'RuimtesController@index');
-Route::get('/contact', 'ContactController@index');
+Route::get('/', 'HomepageController@entryPointVue');
+// Route::get('/agenda', 'AgendaController@index');
+// Route::get('/nieuws', 'NieuwsController@index');
+// Route::get('/fotos', 'FotosController@index');
+// Route::get('/over-ons', 'OverOnsController@index');
+// Route::get('/ruimtes', 'RuimtesController@index');
+// Route::get('/contact', 'ContactController@index');
 
 
 Route::auth();

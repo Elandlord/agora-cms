@@ -15,29 +15,43 @@
       <div class="collapse bg-main navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav space-outside-left-xl">
           <li>
-            <a class="bg-main text-color-light font-md" href="agenda">AGENDA<span class="sr-only">(current)</span></a>
+            <router-link tag="li" class='space-inside-md' to="/agenda" exact>
+              <a class="bg-main text-color-light font-md">AGENDA<span class="sr-only">(current)</span></a>
+            </router-link>
           </li>
           <li>
-            <a class="bg-main text-color-light font-md" href="nieuws">NIEUWS</a>
+            <router-link tag="li" class='space-outside-left-md space-inside-md'  to="/nieuws" exact>
+              <a class="bg-main text-color-light font-md">NIEUWS</a>
+            </router-link>
           </li>
           <li>
-            <a class="bg-main text-color-light font-md" href="fotos">FOTO'S</a>
+            <router-link tag="li" class='space-outside-left-md space-inside-md' to="/fotos" exact>
+              <a class="bg-main text-color-light font-md">FOTO'S</a>
+            </router-link>
           </li>
         </ul>
 
         <div class='logo-center hidden-xs'>
-          <a href='/'><img src='images/agora-logo.png'/></a>
+          <router-link tag="li" to="/" exact>
+            <a><img src='images/agora-logo.png'/></a>
+          </router-link>
         </div>
 
         <ul class="nav navbar-nav navbar-right space-outside-right-xl">
           <li>
-            <a class="bg-main text-color-light font-md" href="over-ons">OVER ONS</a>
+            <router-link class='space-outside-left-md space-inside-md'  tag="li" to="/over-ons" exact>
+              <a class="bg-main text-color-light font-md">OVER ONS</a>
+            </router-link>
           </li>
           <li>
-            <a class="bg-main text-color-light font-md" href="ruimtes">RUIMTES</a>
+            <router-link class='space-outside-left-md space-inside-md'  tag="li" to="/ruimtes" exact>
+              <a class="bg-main text-color-light font-md">RUIMTES</a>
+            </router-link>
           </li>
           <li>
-            <a class="bg-main text-color-light font-md" href="contact">CONTACT</a>
+            <router-link class='space-outside-left-md space-inside-md' tag="li" to="/contact" exact>
+              <a class="bg-main text-color-light font-md">CONTACT</a>
+            </router-link>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
