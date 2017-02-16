@@ -1,9 +1,16 @@
 <template>
 	<div>
 
-		<banner>
-			<h2>RUIMTES</h2>
-		</banner>
+		<banner title='RUIMTES'> </banner>
+
+		<divider-content></divider-content>
+
+		<div class='achtergrond-content' style='min-height:500px;'>
+			<div class='container'>
+
+			</div>
+
+		</div>
 
 	</div>
 </template>

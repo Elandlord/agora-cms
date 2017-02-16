@@ -1,9 +1,16 @@
 <template>
 	<div>
 
-		<banner>
-			<h2>CONTACT</h2>
-		</banner>
+		<banner title='CONTACT'></banner>
+
+		<divider-content></divider-content>
+
+		<div class='achtergrond-content' style='min-height:500px;'>
+			<div class='container'>
+
+			</div>
+
+		</div>
 
 	</div>
 </template>

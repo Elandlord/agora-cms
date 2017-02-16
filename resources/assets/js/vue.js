@@ -11,6 +11,7 @@ Vue.component('homepage-banner', require('./components/HomepageBanner.vue'));
 Vue.component('banner', require('./components/Banner.vue'));
 Vue.component('bottom-footer', require('./components/Footer.vue'));
 Vue.component('info-footer', require('./components/InfoFooter.vue'));
+Vue.component('divider-content', require('./components/DividerContent.vue'));
 
 // Agenda components
 Vue.component('agenda-list', require('./components/Agenda/AgendaList/AgendaList.vue'));

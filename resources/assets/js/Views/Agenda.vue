@@ -1,9 +1,17 @@
 <template>
 	<div>
 
-		<banner>
-			<h2>AGENDA</h2>
+		<banner title="AGENDA">
 		</banner>
+
+		<divider-content></divider-content>
+
+		<div class='achtergrond-content' style='min-height:500px;'>
+			<div class='container'>
+
+			</div>
+
+		</div>
 
 	</div>
 </template>
