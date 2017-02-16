@@ -13,17 +13,22 @@
 			</div>
 		</div>
 
-		<div class='achtergrond-content container-fluid' style='min-height:500px;'>
-			<div class='row'>
-
-			</div>
-		</div>
-	</div>
+		<div class='achtergrond-content ' style='min-height:500px;'>
+      <div class="container">
+        <div class='row'>
+          <div class="col-lg-6 space-inside-up-md">
+            <agenda-list></agenda-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
     export default {
         mounted() {
+
             console.log('Component mounted.')
         }
     }
