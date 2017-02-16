@@ -13,7 +13,7 @@ Vue.component('bottom-footer', require('./components/Footer.vue'));
 Vue.component('info-footer', require('./components/InfoFooter.vue'));
 
 // Agenda components
-Vue.component('agenda-list', require('./components/AgendaComponents/AgendaList.vue'));
+// Vue.component('agenda-list', require('./components/AgendaComponents/AgendaList.vue'));
 
 import router from './routes';
 
