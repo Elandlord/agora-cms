@@ -1,11 +1,15 @@
 <template>
 <div>
+  <!-- datum -->
   <div class="date">
     <P>ZA</P>
     <p>10 dec</p>
     <p>19.00 UUR</p>
   </div>
-  <div class="image"></div>
+
+  <div class="image">
+    <img   src="url/to/image">
+  </div>
   <div class="content">
     <h5>Titel van het item</h5>
     <p>Stukje beschrijving van het evenement</p>
