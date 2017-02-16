@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Example's <small>Example description</small> </h1>
+      <h1> Nieuws <small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Example</a></li>
+        <li><a href="#">Nieuws</a></li>
       </ol>
 
     </section>
@@ -18,7 +18,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Example</h3>
+              <h3 class="box-title">Overzicht</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -34,8 +34,45 @@
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th>#<span class='ion-arrow-down-b table-head'></span></th>
+                      <th>Titel</th>
+                      <th>Tekst</th>
+                      <th>Auteur</th>
+                      <th>Publicatiedatum</th>
+                      <th>Datum</th>
+                    </tr>
+                  </thead>
                 <tbody>
+                @foreach ($news as $object)
+                  <tr>
+                      <!-- edit form -->
+                      <td>
+                        @include('cms.core.partials.edit_button', [
+                          'type' => 'news',
+                          'id' => $object->id
+                        ])
+                      </td>
+                      <!-- Verwijderen form -->
+                      <td>
+                        @include('cms.core.partials.delete_button', [
+                          'type' => 'news',
+                          'id' => $object->id
+                        ])
+                      </td>
 
+                      <td>{{ $object->id }}</td>
+                      <td>{{ $object->title }}</td>
+                      <td>{{ $object->body }}</td>
+                      <td>{{ $object->author }}</td>
+                      <td>{{ $object->publish_date }}</td>
+                      <td>{{ $object->occurence_date }}</td> 
+
+                    </tr>
+                  @endforeach    
 
                 </tbody>
               </table>

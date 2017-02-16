@@ -1,5 +1,4 @@
 import Model from './Model';
-import CustomerFile from './CustomerFile';
 
 class Customer extends Model{
 
