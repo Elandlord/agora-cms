@@ -222,6 +222,13 @@ h1,h2,h3,h4,h5{
 .bg-secondary{ 	background: $secondary-color; min-height: 1px; }
 .bg-accent{ background: $accent-color; min-height: 1px; }
 
+/* background opacity */
+
+.bg-light-opacity-xs { background: rgba($light-color, .7); }
+.bg-light-opacity-sm { background: rgba($light-color, .5); }
+.bg-light-opacity-md { background: rgba($light-color, .3); }
+.bg-light-opacity-lg { background: rgba($light-color, .1); }
+
 
 /* background lighten */
 

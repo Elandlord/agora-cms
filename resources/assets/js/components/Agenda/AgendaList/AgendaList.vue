@@ -13,9 +13,12 @@
 </style>
 
 <script type="text/javascript">
+
   export default {
     mounted() {
-
+      AgendaItem.all(() => {
+        this.agendaItems = agendaItems;
+      });
     }
   }
 

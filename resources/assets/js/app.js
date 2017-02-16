@@ -16,10 +16,13 @@ require('admin-lte/plugins/colorpicker/bootstrap-colorpicker.min');
 require('admin-lte/plugins/timepicker/bootstrap-timepicker.min');
 require('admin-lte/plugins/iCheck/icheck.min');
 
+import 'moment';
+
 // init plugins here
 $('.datepicker').datepicker({
 	format: 'yyyy-mm-dd'
 });
+
 $('.timepicker').timepicker({
 	template: 'dropdown',
 	showInputs: false,
