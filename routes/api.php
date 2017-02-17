@@ -29,5 +29,5 @@ Route::resource('section', 'SectionController');
 
 
 // ------ CUSTOM ROUTES GO UNDERNEATH HERE ----------------
-Route::resource('event', 'EventController');
 Route::resource('news', 'API\NewsController');
+Route::resource('event', 'API\EventController');

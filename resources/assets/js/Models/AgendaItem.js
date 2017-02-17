@@ -2,11 +2,11 @@ import Model from './Model';
 
 class AgendaItem extends Model{
   create(success) {
-    API.post('media', this.data(), success, () => {});
+    API.post('event', this.data(), success, () => {});
   }
 
   update() {
-    API.post('media' + this.id, this.data(), this.success, function() {
+    API.post('event' + this.id, this.data(), this.success, function() {
       // notify the user if something went wrong.
     });
   }
@@ -14,20 +14,20 @@ class AgendaItem extends Model{
   delete(confirm = false, success) {
     if(confirm == true) {
       Notifier.askConfirmation(() => {
-        API.delete('media', this.id);
+        API.delete('event', this.id);
         success();
       });
     }else{
-      API.delete('media', this.id);
+      API.delete('event', this.id);
       success();
     }
   }
 
   static all(success, failure) {
-    API.get('media', (data) => {
+    API.get('event', (data) => {
       let all = [];
       for(let object in data) {
-        let newObject = new Media(data[object]);
+        let newObject = new AgendaItem(data[object]);
         all.push(newObject);
       }
       success(all);
@@ -35,12 +35,12 @@ class AgendaItem extends Model{
   }
 
   static find(id, success, failure) {
-    API.get('media/' + id + '/edit', function(data){
-      let customer = new Customer(data);
+    API.get('event/' + id + '/edit', function(data){
+      let agendaItem = new AgendaItem(data);
       success(customer);
-      Event.fire('media.loaded');
+      Event.fire('event.loaded');
     }, failure);
   }
 }
 
-export default Media;
+export default AgendaItem;

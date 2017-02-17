@@ -15,20 +15,20 @@
         <p class="text-bold text-uppercase text-color-light">uur</p>
         </div>
     </div>
-    <div class="bg-secondary relative inline-block">
+    <div class="bg-light-opacity-lg relative inline-block">
       <div class="col-lg-6 col-md-6 col-sm-6 reset-padding">
         <div  class="image bg-secondary">
           <img class="width-auto" src="/images/test.jpg">
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 reset-padding  space-inside-sides-sm space-inside-up-sm">
-        <h2 class="text-uppercase text-color-light space-outside-down-sm">Kinder disco</h2>
+        <h2 class="text-uppercase text-color-light space-outside-down-sm">{{ agendaItem.title }}</h2>
         <p class="font-sm text-light text-color-light space-outside-down-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis egestas lacus. Vivamus imperdiet leo arcu, sit amet dignissim mauris ultricies vitae.
+        {{ agendaItem.description }}
         </p>
 
       </div>
-      <button  style="left: 52%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
+      <button  style="left: 53%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
       <button   class="font-sm visible-xs space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
     </div>
   </div>

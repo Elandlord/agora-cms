@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EventController extends Controller
 {
@@ -15,7 +16,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::alL();
-        return view('cms.pages.event.index', compact('events'));
+        return response()->json($events, 200);
     }
 
     /**
