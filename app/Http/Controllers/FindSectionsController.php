@@ -2,19 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 class FindSectionsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
 
+        $parameters = explode('/', $slug);
+
+        $searches = [];
+
+        $prev = "";
+        for($i = 0; $i < count($parameters); $i++){
+            if($i % 2 == 0){
+                $searches[$parameters[$i]] = "";
+                $prev = $parameters[$i];
+            }else{
+                $searches[$prev] = $parameters[$i];
+            }
+        }
+
+        $page = Page::where(
+            $searches
+            )->get();
+
+
+        // $projects = $hours->unique()->map(function($hour){
+        //     return $hour->project;
+        // })->unique();
+
+        return response()->json($page, 200);
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -81,4 +110,5 @@ class FindSectionsController extends Controller
     {
         //
     }
+
 }

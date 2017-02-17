@@ -1,13 +1,8 @@
 class Model {
 	constructor(data) {
-		this.originalData = {};
-		this.all = {};
-
-		this.originalData = data;
 		for(let field in data) {
 			this[field] = data[field];
 		}
-
 	}
 
 	static all(apicall, factory, success, failure) {

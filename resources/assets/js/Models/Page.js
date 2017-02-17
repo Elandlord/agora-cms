@@ -1,4 +1,5 @@
 import Model from './Model';
+import Section from './Section';
 
 class Page extends Model{
 
@@ -46,26 +47,42 @@ class Page extends Model{
 	}
 
 	static where(parameters, success, failure) {
+		console.log(parameters);
 		let data = "";
+
 		for(let field in parameters) {
-			data += field + '=' + parameters[field] + '&';
+			data += field + '/' + parameters[field] + '/';
 		}
 
-		data = data.substring(0, data.length - 1);
-
-		API.get('page/where?' + data, (page) => {
+		API.get('section/where/' + data, (data) => {
 			let all = [];
-			success(new Page(page));
+			if(data.length == 1) {
+				success(new Page(data[0]));
+			}else{
+				for(let object in data) {
+					let page = new Page(data[object]);
+					all.push(page);
+				}
+				success(all);
+			}
 		}, failure);
 	}
 
 	with(relation, factory) {
 		API.get('page/' + this.id + '/' + relation, (relationData) => {
-			this[relation] = factory(relationData); 
+			this[relation] = [];
+			relationData.forEach((data) => {
+				this[relation].push(factory(data));
+			});
+
+			if(this[relation].length == 0) {
+				delete this[relation];
+			}
+
 		});
 
 	}
 
 }
 
-export default Section;
+export default Page;

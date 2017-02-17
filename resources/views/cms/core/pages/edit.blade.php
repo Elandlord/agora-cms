@@ -76,6 +76,7 @@
             <!-- /.box-header -->
           <div class="box-body table-responsive no-padding">
             <form method="POST" action="{{ URL::to('cms/section') }}">
+            {{csrf_field()}}
               <table class="table table-hover">
                 <tbody>
                   <tr>

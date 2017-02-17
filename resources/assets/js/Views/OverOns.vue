@@ -101,6 +101,7 @@
 
 <script>
 import Page from '../Models/Page';
+import Section from '../Models/Section';
 
     export default {
 
@@ -116,14 +117,16 @@ import Page from '../Models/Page';
             Page.where({
             	name: 'OverOns'
             }, (page) => {
+
             	page.with('sections', (section) => {
-            		return new Section(section);
-            	});
+                return new Section(section);
+              });
 
             	setTimeout(() => {
             		this.page = page;
             	}, 500);
-            	
+
+              console.log(page);
             });
         }
     }
