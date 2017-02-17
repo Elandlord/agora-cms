@@ -13,6 +13,23 @@ Homestead.yaml
 /public/mix-manifest.json
 /public/js/vue.js
 /public/css/cms.css
+<<<<<<< HEAD
+/public/images/shutterstock_113041108.jpg
+/public/images/shutterstock_128632589.jpg
+/public/images/shutterstock_130800773.jpg
+/public/images/shutterstock_154023806.jpg
+/public/images/shutterstock_166481948.jpg
+/public/images/shutterstock_184855025.jpg
+/public/images/shutterstock_224122990.jpg
+/public/images/shutterstock_250329625.jpg
+/public/images/shutterstock_267444602.jpg
+/public/images/shutterstock_276307523.jpg
+/public/images/shutterstock_283916477.jpg
+/public/images/shutterstock_303905240.jpg
+/public/images/shutterstock_381754447.jpg
+/public/images/shutterstock_57416137.jpg
+/public/images/test.jpg
+=======
 shutterstock_113041108.jpg
 shutterstock_128632589.jpg
 shutterstock_130800773.jpg
@@ -28,3 +45,4 @@ shutterstock_303905240.jpg
 shutterstock_381754447.jpg
 shutterstock_57416137.jpg
 test.jpg
+>>>>>>> fd70ce7c4833c37d1ceb7342adefdddaae8d23df

@@ -14,7 +14,8 @@ Vue.component('info-footer', require('./components/InfoFooter.vue'));
 Vue.component('divider-content', require('./components/DividerContent.vue'));
 
 // Agenda components
-// Vue.component('agenda-list', require('./components/AgendaComponents/AgendaList.vue'));
+Vue.component('agenda-list', require('./components/Agenda/AgendaList/AgendaList.vue'));
+Vue.component('agenda-item', require('./components/Agenda/AgendaItem/AgendaItem.vue'));
 
 // News components
 Vue.component('news-list', require('./components/News/NewsList/NewsList.vue'));

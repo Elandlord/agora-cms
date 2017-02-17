@@ -1,28 +1,36 @@
 <template>
-	<div class='col-lg-12 inline-block'>
-		<div class='inline-block bg-light-opacity-lg '>
-			<div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 reset-padding'>
+<div>
 
-				<div class='image border-left border-main' style='width: 100%;'>
-					<img class='width-auto' src='images/agora2.png'/>
-				</div>
+  <div class='col-lg-12 inline-block bg-light-opacity-lg reset-padding'>
 
-			</div>
-			<div class='col-lg-6 col-md-6 col-sm-6 col-xs-6 reset-padding'>
+      <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 
-				<h3 class='text-color-light space-inside-sides-sm space-inside-sm'>{{ news.title }}</h3>
+        <div class='image border-left border-main' style='width: 100%;'>
+          <img class='width-auto' src='images/agora2.png'/>
+        </div>
 
-				<p class='text-color-light space-inside-sides-sm'>
-					{{ news.body }}
-				</p>
+      </div>
+      <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 
-				<div class='space-outside-sides-sm space-outside-up-sm'>
-					<button class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">LEES MEER</button>
-					<h5 class='text-color-light text-right inline space-inside-sides-sm'>{{ news.publish_date }}</h5>
-				</div>
-			</div>
-		</div>
-	</div>
+        <h3 class='text-color-light space-inside-sides-sm space-inside-sm text-uppercase'>{{ news.title }}</h3>
+
+        <p class='text-color-light space-inside-sides-sm xs-space-outside-down-sm'>
+          {{ news.body }}
+        </p>
+
+      </div>
+
+      <button style="left: 52.5%; bottom: 12px;" class="hidden-xs font-sm position-bottom-center text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">LEES MEER</button>
+
+      <button   class="font-sm visible-xs  space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
+
+      <div style="bottom: 12px;" class="position-bottom-right">
+        <h5  class='block text-color-light text-right space-inside-sides-sm'>{{ news.publish_year }}</h5>
+        <span class="block text-color-light  reset-padding space-inside-sides-sm"> {{ news.month_name }} {{ news.publish_day }} </span>
+      </div>
+
+  </div>
+</div>
 </template>
 
 <script>

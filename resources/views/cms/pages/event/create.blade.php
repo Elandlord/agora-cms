@@ -33,12 +33,71 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
+            <form method="post" action="{{URL::to('cms/event')}}">
+            {{csrf_field()}}
               <table class="table table-hover">
                 <tbody>
-
-
+                  <tr>
+                    <td>
+                      <label>Title</label>
+                      <input type='text' class='form-control' name='title'/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Location</label>
+                      <input type='text' class='form-control' name='location'/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>date</label>
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type='text' name='publish_date' class='form-control datepicker' />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Beschrijving</label>
+                      <textarea class='form-control' name='description'></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Start tijd</label>
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type='text' name='start_time' class='form-control timepicker' />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Eind tijd</label>
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type='text' name='end_time' class='form-control timepicker' />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-group">
+                        <button class="btn btn-success" type="submit" >Toevoegen</button>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
+              </form>
             </div>
             <!-- /.box-body -->
 

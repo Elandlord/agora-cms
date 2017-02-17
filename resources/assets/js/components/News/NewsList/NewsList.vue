@@ -1,10 +1,7 @@
 <template>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        
-    	<news-headline :news='newsHeadline'></news-headline>
-    		
+        <news-headline  :news='newsHeadline' ></news-headline>
         <news-item v-for="item in news" :news='item' class='space-outside-up-sm'></news-item>
-
     </div>
 </template>
 

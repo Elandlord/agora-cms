@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
 
@@ -21,10 +21,10 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Page $page)
+    public function index($id)
     {
-        $sections = $page->sections;
-        return response()->json($section);
+        $sections = Section::where('page_id', $id)->get();
+        return response()->json($sections);
     }
 
     /**

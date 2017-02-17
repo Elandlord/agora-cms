@@ -15,13 +15,13 @@
 
     <body>
 
-    	<div id="app">
+    	<div id="app" class="no-overflow">
 
             @include('layouts.navigation')
 
 
             <router-view>
-                        
+
             </router-view>
 
             @include('partials.footer')

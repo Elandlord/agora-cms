@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Example's <small>Example description</small> </h1>
+      <h1> Activiteiten <small>Beheer de agendaitems.</small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Example</a></li>
+        <li><a href="#">Activiteiten</a></li>
       </ol>
 
     </section>
@@ -18,15 +18,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Example</h3>
+              <h3 class="box-title">Activiteiten</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <!-- <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -35,8 +30,21 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tbody>
-
-
+                <tr>
+                  <th>Titel</th>
+                  <th>Beschrijving</th>
+                  <th></th>
+                </tr>
+                  @foreach($events as $event)
+                    <tr>
+                      <td>
+                        {{ $event->title }}
+                      </td>
+                      <td>
+                        {{ $event->description }}
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
