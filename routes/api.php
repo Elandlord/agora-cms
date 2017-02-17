@@ -23,11 +23,15 @@ Route::get('/logout', 'LogOutController@index');
 Route::get('/', 'DashboardController@index');
 
 // ----------------- GENERIC ROUTES FOR EVERY PROJECT GO HERE ----------
-
 Route::resource('page', 'PageController');
-Route::resource('section', 'SectionController');
 
 
 // ------ CUSTOM ROUTES GO UNDERNEATH HERE ----------------
 Route::resource('event', 'EventController');
 Route::resource('news', 'API\NewsController');
+
+
+// ------ CUSTOM ROUTES FOR SPECIFIC APPROACH ----------------
+Route::get('page/{id}/section', 'SectionController@index');
+Route::get('section/{slug}', 'FindSectionsController@index');
+Route::get('page/', 'HotelsSearchController@index');

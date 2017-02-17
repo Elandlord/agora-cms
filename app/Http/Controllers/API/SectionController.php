@@ -21,10 +21,10 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Page $page)
     {
-        $page = Page::all();
-        return view('cms.core.sections.index', compact('pages'));
+        $sections = $page->sections;
+        return response()->json($section);
     }
 
     /**

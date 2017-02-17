@@ -45,6 +45,13 @@ class News extends Model{
 		}, failure);
 	}
 
+	with(relation, factory) {
+		API.get('api/users/' + this.id + '/' + relation, (relationData) => {
+			this[relation] = factory(relationData); 
+		});
+
+	}
+
 }
 
 export default News;

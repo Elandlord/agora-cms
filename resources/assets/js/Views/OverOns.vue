@@ -100,9 +100,31 @@
 </template>
 
 <script>
+import Page from '../Models/Page';
+
     export default {
+
+    	data() {
+    		return{
+    			pageSections: null,
+    		}
+    	},
+
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
+
+            Page.where({
+            	name: 'OverOns'
+            }, (page) => {
+            	page.with('sections', (section) => {
+            		return new Section(section);
+            	});
+
+            	setTimeout(() => {
+            		this.page = page;
+            	}, 500);
+            	
+            });
         }
     }
 </script>
