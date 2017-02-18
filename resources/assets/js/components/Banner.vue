@@ -1,7 +1,10 @@
 <template>
 	<div class='text-over-image hidden-xs'>
-    	<img class='text-color-white' src='images/agora-banner-pagina.jpg' />
-        <h2> {{ title }} </h2>
+    	<img src='images/agora-banner-pagina.jpg' />
+        <div class="header-on-image"> 
+            <h2 class='text-center'> {{ title | uppercase }} </h2>
+        </div>
+
     </div>
 </template>
 
@@ -10,6 +13,12 @@
 
         props: {
             title: null,
+        },
+
+        filters: {
+            uppercase(str){
+                return str.toUpperCase();
+            },
         },
 
         mounted() {

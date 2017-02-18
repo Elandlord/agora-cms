@@ -17,6 +17,11 @@ let routes = [
     },
 
     {
+        path: '/nieuws/page/:id',
+        component: require('./components/News/ClickPage/Page')
+    },
+
+    {
         path: '/fotos',
         component: require('./Views/Fotos')
     },

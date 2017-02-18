@@ -31,8 +31,8 @@
           </li>
         </ul>
 
-        <div class='logo-center hidden-xs'>
-          <router-link tag="li" to="/" exact>
+        <div class='logo-center hidden-xs' style='list-style-type: none;'>
+          <router-link tag="li" to="/" style='list-style-type: none;' exact>
             <a><img src='images/agora-logo.png'/></a>
           </router-link>
         </div>

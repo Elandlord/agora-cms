@@ -2,7 +2,7 @@
 	<div>
 
 		<generic-page title="OVER ONS">
-						<div class='container'>
+			<div class='container'>
 				<div class='row space-outside-up-md'>
 					<div class='col-lg-4'>
 						<div class='image'>

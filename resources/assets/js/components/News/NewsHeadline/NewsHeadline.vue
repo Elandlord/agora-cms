@@ -18,10 +18,10 @@
 
 			<div class='col-lg-12 reset-padding'>
 				<p class='text-color-light space-inside-sm'>
-					{{ news.body }}
+					{{ news.body | cutString |  addDots }}
 				</p>
 
-				<button class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light space-outside-up-xs space-outside-down-lg">LEES MEER</button>
+				<a :href="'#nieuws/page/' + news.id" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">LEES MEER</a>
 			</div>
 		</div>
 
@@ -35,6 +35,16 @@
 
     	props: {
     		news: null,
+    	},
+
+    	filters: {
+    		cutString(str){
+    			return str.substring(0, 200);
+    		},
+
+    		addDots(str){
+    			return str + '...';
+    		}
     	},
 
         mounted() {

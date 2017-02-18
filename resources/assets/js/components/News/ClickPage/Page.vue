@@ -1,0 +1,73 @@
+<template>
+	<div>
+		<generic-page :title='news.title' v-if="news != null">
+
+            <div class='container'>
+                <div class='row space-outside-md'>
+                    <div class='col-lg-12'>
+                        <div class='row'>
+
+                            <div class='col-lg-12 reset-padding space-inside-sm'>
+                                <a :href="'#/nieuws'" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">GA TERUG</a>
+                            </div>
+
+                            <div class='col-lg-6 reset-padding'>
+
+                                <img src='images/agora8.png' class='border-right border-main' />
+
+                            </div>
+
+                            <div class='col-lg-6 reset-padding'>
+                                <div class='bg-main space-inside-sm space-inside-sides-sm inline-block'>
+                                    <h2 class='text-color-light'>{{ news.publish_day }}  {{ news.month_name | uppercase | cutString }}</h2>
+
+                                    <h1 class='space-inside-xs right text-color-light'>{{ news.publish_year }}</h1>
+                                </div>
+                                
+
+                                <h3 class='text-color-light space-outside-sm space-outside-left-sm'>Auteur: {{ news.author }}</h3>
+
+                                <p class='text-color-light space-outside-left-sm'>{{ news.body }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		</generic-page>
+	</div>
+</template>
+
+<script>
+    import News from '../../../Models/News';
+
+    export default {
+
+    	data(){
+    		return{
+    			news: null,
+    		}
+    	},
+
+        filters: {
+            uppercase(str){
+                return str.toUpperCase();
+            },
+
+            cutString(str){
+                return str.substring(0, 3);
+            }
+        },
+
+        beforeMount(){
+            News.find(this.$route.params.id, (news) => {
+                this.news = news;
+            });
+        },
+
+        mounted() {
+            console.log('Component mounted.');
+        }
+
+    }
+</script>

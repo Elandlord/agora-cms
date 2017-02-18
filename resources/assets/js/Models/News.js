@@ -38,7 +38,7 @@ class News extends Model{
 	}
 
 	static find(id, success, failure) {
-		API.get('news/' + id + '/edit', function(data){
+		API.get('news/' + id, function(data){
 			let news = new News(data);
 			success(news);
 			Event.fire('newsLoaded');

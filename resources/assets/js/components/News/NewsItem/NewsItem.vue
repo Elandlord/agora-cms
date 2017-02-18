@@ -15,12 +15,12 @@
         <h3 class='text-color-light space-inside-sides-sm space-inside-sm text-uppercase'>{{ news.title }}</h3>
 
         <p class='text-color-light space-inside-sides-sm xs-space-outside-down-sm'>
-          {{ news.body }}
+          {{ news.body | cutString | addDots }}
         </p>
 
       </div>
 
-      <button style="left: 52.5%; bottom: 12px;" class="hidden-xs font-sm position-bottom-center text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">LEES MEER</button>
+      <a :href="'#nieuws/page/' + news.id" style="left: 52.5%; bottom: 12px;" class="hidden-xs font-sm position-bottom-center text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline">LEES MEER</a>
 
       <button   class="font-sm visible-xs  space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
 
@@ -30,6 +30,7 @@
       </div>
 
   </div>
+
 </div>
 </template>
 
@@ -40,8 +41,30 @@
     		news: null,
     	},
 
-        mounted() {
-            console.log('Component mounted.')
+      data(){
+        return{
+
         }
+      },
+
+      filters: {
+        cutString(str){
+          return str.substring(0, 200);
+        },
+
+        addDots(str){
+          return str + '...';
+        }
+      },
+
+      mounted() {
+          console.log('Component mounted.')
+      },
+
+      methods: {
+        showNews(){
+          Event.fire('news-item.clickPage', this.news);
+        }
+      }
     }
 </script>
