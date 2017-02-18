@@ -1,11 +1,8 @@
 <template>
 	<div>
 
-		<banner title='CONTACT'></banner>
+		<generic-page title='CONTACT'>
 
-		<divider-content></divider-content>
-
-		<div class='achtergrond-content' style='min-height:500px;'>
 			<div class='container'>
 				<div class='row space-outside-down-lg'>
 					<div class='col-lg-12 space-outside-md'>
@@ -23,13 +20,12 @@
 						</form>
 					</div>
 				</div>
-
-				<h2 class='text-color-light inline bg-accent space-inside-up-sm space-inside-sides-sm'>LOCATIE</h2>
-				<h4 class='text-color-light inline right space-outside-sides-md'>Rodenburg 1B • 9351 PV Leek</h4>
-				<h4 class='text-color-light inline right space-outside-sides-md'>Ma - Vr: 09:00 - 17:00</h4>
-				<h4 class='text-color-light inline right space-outside-sides-md'>info@agoraleek.nl</h4>
-
 			</div>
+
+			<h2 class='text-color-light inline bg-accent space-inside-up-sm space-inside-sides-sm'>LOCATIE</h2>
+			<h4 class='text-color-light inline right space-outside-sides-md'>Rodenburg 1B • 9351 PV Leek</h4>
+			<h4 class='text-color-light inline right space-outside-sides-md'>Ma - Vr: 09:00 - 17:00</h4>
+			<h4 class='text-color-light inline right space-outside-sides-md'>info@agoraleek.nl</h4>
 
 			<div class='container-fluid'>
 
@@ -39,9 +35,7 @@
 
 			</div>
 
-
-
-		</div>
+		</generic-page>
 
 	</div>
 </template>

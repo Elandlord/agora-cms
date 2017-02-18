@@ -1,16 +1,9 @@
 <template>
 	<div>
 
-		<banner title="FOTO'S"></banner>
+		<generic-page title="FOTO'S">
 
-		<divider-content></divider-content>
-
-		<div class='achtergrond-content' style='min-height:500px;'>
-			<div class='container'>
-
-			</div>
-
-		</div>
+		</generic-page>
 
 	</div>
 </template>

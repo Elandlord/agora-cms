@@ -1,12 +1,8 @@
 <template>
 	<div>
 
-		<banner title='RUIMTES'> </banner>
-
-		<divider-content></divider-content>
-
-		<div class='achtergrond-content' style='min-height:500px;'>
-		<!-- start container -->
+		<generic-page title="RUIMTES">
+			<!-- start container -->
 			<div class='container'>
 
 				<!-- intro text on page -->
@@ -78,10 +74,8 @@
 				<!-- end third box -->
 
 			<!-- end container -->
-			</div>
-
-		</div>
-
+		</generic-page>
+		
 	</div>
 </template>
 
