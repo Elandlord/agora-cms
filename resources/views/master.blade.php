@@ -20,10 +20,11 @@
 
             @include('layouts.navigation')
 
+            <transition name="slide-fade">
+                <router-view>
 
-            <router-view>
-
-            </router-view>
+                </router-view>
+            </transition>
 
             @include('partials.footer')
 

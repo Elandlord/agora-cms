@@ -1,3 +1,18 @@
 .achtergrond-content{
 	background-image: url('/images/achtergrond-content.png');
 }
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.4s ease-in;
+}
+.slide-fade-leave-active {
+  transition: all 0.1s ease-out;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(0px);
+  opacity: 0.1;
+}
+
