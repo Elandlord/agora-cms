@@ -1,15 +1,12 @@
 <template>
-	<div>
+    <generic-page :title="title">
 
-		<generic-page title="FOTO'S">
-
-		</generic-page>
-
-	</div>
+    </generic-page>
 </template>
 
 <script>
     export default {
+
         mounted() {
             console.log('Component mounted.')
         }

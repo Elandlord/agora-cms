@@ -1,7 +1,7 @@
 <template>
 <div>
 
-  <div class='col-lg-12 inline-block bg-light-opacity-lg reset-padding'>
+  <div class='col-lg-12 inline-block bg-light-opacity-lg reset-padding space-outside-sm'>
 
       <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 

@@ -1,13 +1,8 @@
 <template>
 	<div>
 
-		<banner title="OVER ONS">
-		</banner>
-
-		<divider-content></divider-content>
-
-		<div class='achtergrond-content' style='min-height:500px;'>
-			<div class='container'>
+		<generic-page title="OVER ONS">
+						<div class='container'>
 				<div class='row space-outside-up-md'>
 					<div class='col-lg-4'>
 						<div class='image'>
@@ -94,7 +89,7 @@
 
 				</div>
 			</div>
-		</div>
+		</generic-page>
 
 	</div>
 </template>
@@ -118,7 +113,7 @@ import Section from '../Models/Section';
             	name: 'OverOns'
             }, (page) => {
 
-            	page.with('sections', (section) => {
+        	  page.with('sections', (section) => {
                 return new Section(section);
               });
 
