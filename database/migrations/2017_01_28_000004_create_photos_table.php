@@ -18,7 +18,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->string('filename', 100)->nullable();
             $table->integer('model_id')->nullable();
-            $table->integer('photo_type_id')->nullable();
+            $table->string('type', 100)->nullable();
             $table->nullableTimestamps();
         });
     }

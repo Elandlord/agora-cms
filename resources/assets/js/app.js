@@ -1,31 +1,39 @@
-require('./bootstrap');
-require('./Core/Classes');
-
-require('jquery');
-require('bootstrap-sass');
-require('fastclick');
-require('jquery-slimscroll');
-require('admin-lte');
-require('admin-lte/plugins/select2/select2.full.min');
-require('admin-lte/plugins/input-mask/jquery.inputmask');
-require('admin-lte/plugins/input-mask/jquery.inputmask.date.extensions');
-require('admin-lte/plugins/input-mask/jquery.inputmask.extensions');
-require('admin-lte/plugins/daterangepicker/daterangepicker');
-require('admin-lte/plugins/datepicker/bootstrap-datepicker');
-require('admin-lte/plugins/colorpicker/bootstrap-colorpicker.min');
-require('admin-lte/plugins/timepicker/bootstrap-timepicker.min');
-require('admin-lte/plugins/iCheck/icheck.min');
-
 import 'moment';
+require('./bootstrap');
+require('./admin-lte'); // pulls in the admin-lte2 admin dashboard
+require('./Core/Classes'); // Pulls in some helper classes
 
-// init plugins here
-$('.datepicker').datepicker({
-	format: 'yyyy-mm-dd'
-});
+// Core components
+Vue.component('image-display', require('./components/ImageDisplay.vue'));
+Vue.component('image-uploader', require('./components/ImageUploader.vue'));
+Vue.component('cropper', require('./components/Cropper.vue'));
 
-$('.timepicker').timepicker({
-	template: 'dropdown',
-	showInputs: false,
-	maxHours: 24,
-	showMeridian: false
+// Agora lay-out components
+Vue.component('example', require('./components/Example.vue'));
+Vue.component('navigation', require('./components/Navigation.vue'));
+Vue.component('homepage-banner', require('./components/HomepageBanner.vue'));
+Vue.component('banner', require('./components/Banner.vue'));
+Vue.component('bottom-footer', require('./components/Footer.vue'));
+Vue.component('info-footer', require('./components/InfoFooter.vue'));
+Vue.component('divider-content', require('./components/DividerContent.vue'));
+Vue.component('generic-page', require('./components/Page/GenericPage.vue'));
+
+//Doorklikpagina's
+Vue.component('news-page', require('./components/News/ClickPage/Page.vue'));
+
+// Agenda components
+Vue.component('agenda-list', require('./components/Agenda/AgendaList/AgendaList.vue'));
+Vue.component('agenda-item', require('./components/Agenda/AgendaItem/AgendaItem.vue'));
+
+// News components
+Vue.component('news-list', require('./components/News/NewsList/NewsList.vue'));
+Vue.component('news-headline', require('./components/News/NewsHeadline/NewsHeadline.vue'));
+Vue.component('news-item', require('./components/News/NewsItem/NewsItem.vue'));
+
+import router from './routes';
+import VueRouter from 'vue-router';
+
+new Vue({
+    el: '#app',
+    router
 });

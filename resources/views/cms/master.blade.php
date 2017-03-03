@@ -144,11 +144,11 @@
   <div class="control-sidebar-bg"></div>
 </div>
 
-<!-- AdminLTE App -->
+<!-- AdminLvTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="/js/vue.js"></script>
 <script src="/js/app.js"></script>
 
-@yield('scripts')
 
 </body>
 </html>

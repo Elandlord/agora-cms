@@ -10,13 +10,13 @@
 
 						<form method='POST'>
 
-							<input type='text' name='naam' placeholder='NAAM' class='form-control bg-none text-color-light border-light' />
+							<input type='text' name='naam' placeholder='NAAM' class='form-control bg-none text-color-light border-light' required/>
 
-							<input type='text' name='email' placeholder="EMAIL" class='form-control space-outside-sm bg-none text-color-light border-light' />
+							<input type='text' name='email' placeholder="EMAIL" class='form-control space-outside-sm bg-none text-color-light border-light' required/>
 
-							<input type='text' name='phone' placeholder="TELEFOON" class='form-control bg-none text-color-light border-light' />
+							<input type='text' name='phone' placeholder="TELEFOON" class='form-control bg-none text-color-light border-light' required/>
 
-							<textarea name='message' class='text-color-light form-control bg-none border-light space-outside-sm' placeholder="BERICHT"></textarea>
+							<textarea name='message' class='text-color-light form-control bg-none border-light space-outside-sm' placeholder="BERICHT" required></textarea>
 
 							<button  class="font-md text-uppercase space-inside-sides-md space-inside-sm bg-accent border-none text-color-light right">Versturen</button>
 

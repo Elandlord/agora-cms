@@ -1,15 +1,19 @@
 import Model from './Model';
 
-class News extends Model{
+class Photo extends Model{
+
+	static modelName(){
+		return 'photo';
+	}
 
 	save() {
-		API.post('news/save', this.data(), this.success, function() {
+		API.post(`${this.constructor.modelName()}/save`, this.data(), this.success, function() {
 			// notify the user if something went wrong.
 		});
 	}
 
 	update() {
-		API.post('news/update/' + this.id, this.data(), this.success, function() {
+		API.post(`${this.constructor.modelName()}/update/${this.id}`, this.data(), this.success, function() {
 			// notify the user if something went wrong.
 		});
 	}

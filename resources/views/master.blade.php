@@ -9,12 +9,14 @@
         <meta name="viewport" content="width=device-width">
         <title>@yield('title') || Agora</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
-
+        <script>
+            window.Laravel = { csrfToken: '{{ csrf_token() }}' };
+        </script>
         @include('partials.styles')
 
     </head>
 
-    <body>
+    <body >
 
     	<div id="app" class="no-overflow">
 

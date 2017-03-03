@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
 use Illuminate\Http\Request;
 
-use App\Photo;
-
-class NewsController extends Controller
+class NewsPhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
-        return view('cms.pages.news.index', compact('news'));
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('cms.pages.news.create');
+        //
     }
 
     /**
@@ -38,8 +34,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        News::create($request->all());
-        return redirect('cms/news');
+        //
     }
 
     /**
@@ -50,9 +45,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        $news = News::find($id);
-
-        return view('cms.pages.news.show', compact('news'));
+        //
     }
 
     /**
@@ -63,18 +56,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = News::find($id);
-
-        $photo = Photo::where([
-            ['model_id', $id],
-            ['type', 'news']
-        ])->first();
-
-
-        return view('cms.pages.news.edit', compact(
-            'news',
-            'photo'
-        ));
+        //
     }
 
     /**
@@ -86,8 +68,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        News::find($id)->update($request->all());
-        return redirect('cms/news');
+        //
     }
 
     /**
@@ -98,7 +79,6 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        News::find($id)->delete();
-        return redirect('cms/news');
+        //
     }
 }
