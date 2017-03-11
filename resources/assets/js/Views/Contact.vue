@@ -39,7 +39,7 @@
 
 
 
-			<div class='container-fluid'>
+			<div class='container-fluid padding-reset'>
 
 				<div class='divider bg-accent space-inside-sm'></div>
 

@@ -1,8 +1,8 @@
 <template>
 	<div >
-		<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 reset-padding' v-if="news != null">
+		<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 reset-padding space-outside-sm' v-if="news != null">
 			<div class='image' style='width: 100%;'>
-				<img class='width-auto' src='images/bbq.png'/>
+				<img class='width-auto' :src='news.thumbnail'/>
 			</div>
 
 			<div class='border-top border-accent '>
