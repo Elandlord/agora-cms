@@ -42,7 +42,7 @@
         <!--  Agenda events -->
         @include('cms.navigation.navigation-dropdown', [
           'title' => "Agenda",
-          'icon' => 'ion ion-document',
+          'icon' => 'ion ion-android-calendar',
           'linkGroup' => [
             [
               'header' => "Agenda activiteiten",
@@ -55,12 +55,25 @@
         <!--  News -->
         @include('cms.navigation.navigation-dropdown', [
           'title' => "Nieuws",
-          'icon' => 'ion ion-document',
+          'icon' => 'ion ion-document-text',
           'linkGroup' => [
             [
               'header' => "Nieuwsberichten",
               'cms/news' => 'Overzicht',
               'cms/news/create' => 'Toevoegen',
+            ],
+          ]
+        ])
+
+        <!--  Foto's -->
+        @include('cms.navigation.navigation-dropdown', [
+          'title' => "Foto's",
+          'icon' => 'ion ion-images',
+          'linkGroup' => [
+            [
+              'header' => "Foto's op website",
+              'cms/photo' => 'Overzicht',
+              'cms/photo/create' => 'Toevoegen',
             ],
           ]
         ])

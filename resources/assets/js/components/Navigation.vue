@@ -67,7 +67,9 @@
 
         methods: {
           close(){
-            $('.navbar-toggle').click(); 
+            if ($(window).width() < 768) {
+              $('.navbar-toggle').click(); 
+            }
           }
         }
     }
