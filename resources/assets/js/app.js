@@ -24,6 +24,7 @@ Vue.component('news-page', require('./components/News/ClickPage/Page.vue'));
 // Agenda components
 Vue.component('agenda-list', require('./components/Agenda/AgendaList/AgendaList.vue'));
 Vue.component('agenda-item', require('./components/Agenda/AgendaItem/AgendaItem.vue'));
+Vue.component('agenda-headline', require('./components/Agenda/AgendaHeadline/AgendaHeadline.vue'));
 
 // News components
 Vue.component('news-list', require('./components/News/NewsList/NewsList.vue'));
