@@ -13,18 +13,18 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse bg-main navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav lg-space-outside-left-xl">
-          <li>
+        <ul class="nav navbar-nav lg-space-outside-left-xl xs-text-center">
+          <li @click="close()">
             <router-link tag="li" class='space-outside-left-md space-inside-md' to="/agenda" exact>
               <a class="bg-main text-color-light font-md">AGENDA<span class="sr-only">(current)</span></a>
             </router-link>
           </li>
-          <li>
+          <li @click="close()">
             <router-link tag="li" class='space-outside-left-md space-inside-md'  to="/nieuws" exact>
               <a class="bg-main text-color-light font-md">NIEUWS</a>
             </router-link>
           </li>
-          <li>
+          <li @click="close()">
             <router-link tag="li" class='space-outside-left-md space-inside-md' to="/fotos" exact>
               <a class="bg-main text-color-light font-md">FOTO'S</a>
             </router-link>
@@ -37,18 +37,18 @@
           </router-link>
         </div>
 
-        <ul class="nav navbar-nav navbar-right space-outside-right-xl">
-          <li>
+        <ul class="nav navbar-nav navbar-right lg-space-outside-right-xl xs-text-center">
+          <li @click="close()">
             <router-link class='space-outside-left-md space-inside-md'  tag="li" to="/over-ons" exact>
               <a class="bg-main text-color-light font-md">OVER ONS</a>
             </router-link>
           </li>
-          <li>
+          <li @click="close()">
             <router-link class='space-outside-left-md space-inside-md'  tag="li" to="/ruimtes" exact>
               <a class="bg-main text-color-light font-md">RUIMTES</a>
             </router-link>
           </li>
-          <li>
+          <li @click="close()">
             <router-link class='space-outside-left-md space-inside-md' tag="li" to="/contact" exact>
               <a class="bg-main text-color-light font-md">CONTACT</a>
             </router-link>
@@ -63,6 +63,12 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+
+        methods: {
+          close(){
+            $('.navbar-toggle').click(); 
+          }
         }
     }
 </script>
