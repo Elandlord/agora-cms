@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 
-use App\Photo;
+use App\Http\Controllers\Controller;
+
+use App\News;
 
 class NewsPhotoController extends Controller
 {
@@ -13,9 +15,9 @@ class NewsPhotoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        
+        return response()->json(News::find($id)->thumbnail);
     }
 
     /**

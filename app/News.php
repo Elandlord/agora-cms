@@ -12,6 +12,7 @@ class News extends Model
 		'publish_month',
 		'publish_day',
 		'month_name',
+        'thumbnail',
 	];
 
     protected $fillable = [
@@ -55,6 +56,33 @@ class News extends Model
 
     public function getMonthNameAttribute(){
     	return $this->months[$this->publish_month];
+    }
+
+    public function photo() {
+        return Photo::where([
+            ['model_id', $this->id],
+            ['type', 'news'],
+        ])->first();
+    }
+
+    public function getThumbnailAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/news/{$this->id}/16x9/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+        
+    }
+
+    public function getSquareAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/news/{$this->id}/1x1/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+        
     }
 
 

@@ -21,7 +21,7 @@
             console.log('Component mounted.');
 
             News.all((news) => {
-                forEach(let index in news) {
+                for(let index in news) {
                     news[index].with('photo', () => {
                         
                     });

@@ -6,7 +6,7 @@
       <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 
         <div class='image border-left border-main' style='width: 100%;'>
-          <img class='width-auto' src='images/agora2.png'/>
+          <img class='width-auto' :src='news.thumbnail'/>
         </div>
 
       </div>

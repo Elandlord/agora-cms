@@ -13,7 +13,7 @@
 
                             <div class='col-lg-6 reset-padding'>
 
-                                <img src='images/agora8.png' class='border-right border-main' />
+                                <img :src='news.thumbnail' class='border-right border-main' />
 
                             </div>
 
