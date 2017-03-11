@@ -67,13 +67,13 @@
 
         <!--  Foto's -->
         @include('cms.navigation.navigation-dropdown', [
-          'title' => "Foto's",
+          'title' => "Albums",
           'icon' => 'ion ion-images',
           'linkGroup' => [
             [
-              'header' => "Foto's op website",
-              'cms/photo' => 'Overzicht',
-              'cms/photo/create' => 'Toevoegen',
+              'header' => "Albums",
+              'cms/album' => 'Overzicht',
+              'cms/album/create' => 'Toevoegen',
             ],
           ]
         ])

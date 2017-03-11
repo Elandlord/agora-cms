@@ -20,6 +20,8 @@ Route::group(['prefix' => 'cms'],  function () {
         // ------ CUSTOM ROUTES GO UNDERNEATH HERE ----------------
         Route::resource('event', 'EventController');
         Route::resource('news', 'NewsController');
+        Route::resource('album', 'AlbumController');
+
 
     });
 });
