@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Photo;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -61,7 +62,16 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
-        return view('cms.pages.event.edit', compact('event'));
+
+        $photo = Photo::where([
+            ['model_id', $id],
+            ['type', 'event']
+        ])->first();
+
+        return view('cms.pages.event.edit', compact(
+            'event',
+            'photo'
+            ));
     }
 
     /**

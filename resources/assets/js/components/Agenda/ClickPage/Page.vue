@@ -34,10 +34,36 @@
                                 <h3 class='text-color-light space-outside-up-sm space-outside-left-sm'>TIJD</h3>
                                 <p class='text-color-light space-outside-left-sm'>{{ activity.time_start | cutTime }} tot {{ activity.time_end | cutTime }}</p>
 
-                                <p class='text-color-light space-outside-left-sm'>{{ activity.body }}</p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class='row'>
+
+                    <div class='col-lg-12 reset-padding'>
+
+                        <a :href="'#agenda/page/' + activity.id" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">RESERVEREN</a>
+
+                        <a :href="'#agenda/page/' + activity.id" class="hidden-xs space-outside-left-sm font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">EVENEMENT</a>
+
+
+                    </div>
+
+                </div>
+
+                <div class='row space-outside-md'>
+
+                    <div class='col-lg-12 reset-padding'>
+
+                        <h2 class='text-color-light space-outside-down-md'>{{ activity.title | uppercase }}</h2>
+
+                        <p class='text-color-light'>
+                        {{ activity.description | nl2br}}
+                        </p>
+
+                    </div>
+                    
                 </div>
             </div>
 
@@ -67,6 +93,10 @@
 
             cutTime(str){
                 return str.substring(0, 5);
+            },
+
+            nl2br(str){
+               return str.split("\n").join("<br/>");
             }
         },
 

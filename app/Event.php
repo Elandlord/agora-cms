@@ -13,6 +13,7 @@ class Event extends Model
 		'day',
 		'month_name',
     'thumbnail',
+    'day_name',
 	];
 
     protected $fillable = [

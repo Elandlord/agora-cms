@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
@@ -13,6 +13,7 @@ class News extends Model
 		'publish_day',
 		'month_name',
         'thumbnail',
+        'day_name',
 	];
 
     protected $fillable = [
@@ -37,6 +38,12 @@ class News extends Model
     	'11' => 'november',
     	'12' => 'december',
     ];
+
+    public function getDayNameAttribute() {
+      setlocale(LC_TIME, 'Dutch');
+      $date = Carbon::createFromDate($this->publish_year, $this->publish_month, $this->publish_day);
+      return $date->formatLocalized('%A');
+    }
 
     public function getPublishYearAttribute()
     {

@@ -14,37 +14,37 @@
 					</div>
 
 					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md' style='min-height: 150px;'>
+						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
 
 						</div>
 					</div>
 
 					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md' style='min-height: 150px;'>
+						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
 
 						</div>
 					</div>
 
 					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md' style='min-height: 150px;'>
+						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
 
 						</div>
 					</div>
 
 					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md' style='min-height: 150px;'>
+						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
 
 						</div>
 					</div>
 
 					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md' style='min-height: 150px;'>
+						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
 
 						</div>
 					</div>
 
-					<div class='col-lg-2 pointer'>
-						<div class='block bg-dark-lighten-xs' style='min-height: 150px;'>
+					<div class='col-lg-2'>
+						<div class='block bg-dark-lighten-xs pointer' style='min-height: 150px;'>
 
 							<h2 class='text-color-light text-center space-inside-up-lg'>MEER FOTO'S</h2>
 
