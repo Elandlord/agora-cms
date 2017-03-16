@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Example's <small>Example description</small> </h1>
+      <h1> Activiteiten <small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Example</a></li>
+        <li><a href="#">Activiteiten</a></li>
       </ol>
 
     </section>
@@ -18,7 +18,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Example</h3>
+              <h3 class="box-title">Toevoegen</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -39,19 +39,19 @@
                 <tbody>
                   <tr>
                     <td>
-                      <label>Title</label>
+                      <label>Naam</label>
                       <input type='text' class='form-control' name='title'/>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <label>Location</label>
+                      <label>Locatie</label>
                       <input type='text' class='form-control' name='location'/>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <label>date</label>
+                      <label>Datum</label>
                       <div class="input-group date">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
@@ -68,7 +68,7 @@
                   </tr>
                   <tr>
                     <td>
-                      <label>Start tijd</label>
+                      <label>Starttijd</label>
                       <div class="input-group date">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
@@ -79,7 +79,7 @@
                   </tr>
                   <tr>
                     <td>
-                      <label>Eind tijd</label>
+                      <label>Eindtijd</label>
                       <div class="input-group date">
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
@@ -107,7 +107,4 @@
         </div>
     </section>
 </div>
-@stop
-@section('scripts')
-  <script type="text/javascript" src="/js/vue.js" ></script>
 @stop

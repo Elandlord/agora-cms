@@ -1,7 +1,8 @@
-import 'moment';
 require('./bootstrap');
 require('./admin-lte'); // pulls in the admin-lte2 admin dashboard
 require('./Core/Classes'); // Pulls in some helper classes
+
+
 
 // Core components
 Vue.component('image-display', require('./components/ImageDisplay.vue'));
@@ -31,10 +32,25 @@ Vue.component('news-list', require('./components/News/NewsList/NewsList.vue'));
 Vue.component('news-headline', require('./components/News/NewsHeadline/NewsHeadline.vue'));
 Vue.component('news-item', require('./components/News/NewsItem/NewsItem.vue'));
 
+
 import router from './routes';
-import VueRouter from 'vue-router';
 
 new Vue({
     el: '#app',
     router
 });
+
+
+
+
+// init plugins here
+$('.datepicker').datepicker({
+  format: 'yyyy-mm-dd'
+});
+$('.timepicker').timepicker({
+  template: 'dropdown',
+  showInputs: false,
+  maxHours: 24,
+  showMeridian: false
+});
+
