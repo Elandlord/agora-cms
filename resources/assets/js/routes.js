@@ -12,6 +12,11 @@ let routes = [
     },
 
     {
+        path: '/agenda/page/:id',
+        component: require('./components/Agenda/ClickPage/Page')
+    },
+
+    {
         path: '/nieuws',
         component: require('./Views/Nieuws')
     },

@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $appends = [
-      'publish_year',
-      'publish_month',
-      'publish_day',
-      'month_name',
-      'day_name',
-    ];
+
+	protected $appends = [
+		'year',
+		'month',
+		'day',
+		'month_name',
+    'thumbnail',
+	];
 
     protected $fillable = [
       'title',
@@ -41,30 +42,54 @@ class Event extends Model
 
     public function getDayNameAttribute() {
       setlocale(LC_TIME, 'Dutch');
-      $date = Carbon::createFromDate($this->publish_year, $this->publish_month, $this->publish_day);
+      $date = Carbon::createFromDate($this->year, $this->month, $this->day);
       return $date->formatLocalized('%A');
     }
 
-    public function getPublishYearAttribute()
+    public function getYearAttribute()
     {
-      return explode('-', $this->date)[0];
+    	return explode('-', $this->date)[0];
     }
 
-    public function getPublishMonthAttribute()
+    public function getMonthAttribute()
     {
-      return explode('-', $this->date)[1];
+    	return explode('-', $this->date)[1];
     }
 
 
-  public function getPublishDayAttribute()
+	public function getDayAttribute()
     {
-      return explode('-', $this->date)[2];
+    	return explode('-', $this->date)[2];
     }
 
     public function getMonthNameAttribute(){
-      return $this->months[$this->publish_month];
+    	return $this->months[$this->month];
     }
 
+    public function photo() {
+        return Photo::where([
+            ['model_id', $this->id],
+            ['type', 'event'],
+        ])->first();
+    }
 
+    public function getThumbnailAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/event/{$this->id}/16x9/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
 
+    }
+
+    public function getSquareAttribute()
+    {
+        if($this->photo() != null){
+            return "/images/event/{$this->id}/1x1/{$this->photo()->filename}";
+        }else{
+            return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
+        }
+
+    }
 }
