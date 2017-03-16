@@ -38,8 +38,41 @@
 
                   </thead>
                 <tbody>
-  
-
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>#</th>
+                    <th>Titel</th>
+                    <th>Beschrijving</th>
+                    <th></th>
+                  </tr>
+                    @foreach($albums as $object)
+                      <tr>
+                         <!-- edit form -->
+                        <td>
+                          @include('cms.core.partials.edit_button', [
+                            'type' => 'album',
+                            'id' => $object->id
+                          ])
+                        </td>
+                        <!-- Verwijderen form -->
+                        <td>
+                          @include('cms.core.partials.delete_button', [
+                            'type' => 'album',
+                            'id' => $object->id
+                          ])
+                        </td>
+                        <td>
+                          {{ $object->id }}
+                        </td>
+                        <td>
+                          {{ $object->title }}
+                        </td>
+                        <td>
+                          {{ $object->body }}
+                        </td>
+                      </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

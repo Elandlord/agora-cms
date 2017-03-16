@@ -33,12 +33,44 @@
 
                         <!-- /.box-header -->
             <div class="box-body no-padding">
-              <form method="POST" action="{{ URL::to('cms/news') }}" >
+              <form method="POST" action="{{ URL::to('cms/album') }}" >
                 {{csrf_field()}}
                   <table class="table table-responsive">
                     <tbody>
+                      <tr>
+                           <td>
+                                <label>Titel</label>
+                                <input type='text' class='form-control' name='title'/>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> 
+                                <label>Beschrijving</label>
+                                <textarea class='form-control' name='body'></textarea>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td> 
+                              <label>Datum</label>
+                              <div class="input-group date">
+                                <div class="input-group-addon">
+                                  <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type='text' name='date' class='form-control datepicker' />
+                              </div>
+                           </td>
+                        </tr>
+                        
+                        <tr>
+                          <td>
 
-                      
+                              <div class="form-group">
+                                <button class="btn btn-success" type="submit" >Toevoegen</button>
+                              </div>
+
+                          </td>
+                         
+                        </tr>
                     
                     </tbody>
                   </table>

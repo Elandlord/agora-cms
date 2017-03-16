@@ -3,12 +3,12 @@
 @section('content')
 <div id="app">
     <section class="content-header">
-      <h1> Nieuwsbericht <small></small> </h1>
+      <h1> Album <small></small> </h1>
 
       <!--  breadcrumbs -->
       <ol class="breadcrumb">
         <li><a href="{{ URL::to("cms/") }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Nieuwsbericht aanpassen</a></li>
+        <li><a href="#">Album aanpassen</a></li>
       </ol>
 
     </section>
@@ -33,7 +33,7 @@
 
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <form method="POST" action="/cms/news/{{$news->id}}" >
+              <form method="POST" action="/cms/album/{{$album->id}}" >
                 {{csrf_field()}}
                 {{ method_field('PUT') }}
                   <table class="table table-hover">
@@ -41,32 +41,13 @@
                         <tr>
                            <td>
                                 <label>Titel</label>
-                                <input type='text' class='form-control' value="{{ $news->title }}" name='title'/>
+                                <input type='text' class='form-control' value="{{ $album->title }}" name='title'/>
                            </td>
                         </tr>
                         <tr>
                            <td> 
-                                <label>Nieuwsbericht</label>
-                                <textarea class='form-control' name='body'>{{ $news->body }}</textarea>
-                           </td>
-
-                        </tr>
-                        <tr>
-                           <td> 
-                                <label>Auteur</label>
-                                <input type='text' class='form-control' value="{{ $news->author }}" name='author'/>
-                           </td>
-
-                        </tr>
-                        <tr>
-                           <td> 
-                                <label>Publicatiedatum</label>
-                                <div class="input-group date">
-                                  <div class="input-group-addon">
-                                    <i class="fa fa-calendar"></i>
-                                  </div>
-                                  <input type='text' name='publish_date' value="{{ $news->publish_date }}" class='form-control datepicker' />
-                                </div>
+                                <label>Beschrijving</label>
+                                <textarea class='form-control' name='body'>{{ $album->body }}</textarea>
                            </td>
 
                         </tr>
@@ -77,7 +58,7 @@
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='occurence_date' value="{{ $news->occurence_date }}" class='form-control datepicker' />
+                                  <input type='text' name='date' value="{{ $album->date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
@@ -109,7 +90,7 @@
                 </image-display>
 
                 @endif
-                <image-uploader route="photo" model_id="{{$news->id}}" type="news" >
+                <image-uploader route="photo" model_id="{{$album->id}}" type="album" >
                     <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
                 </image-uploader>
             </div>

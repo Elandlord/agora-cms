@@ -31,12 +31,31 @@
               <table class="table table-hover">
                 <tbody>
                 <tr>
+                  <th>#</th>
                   <th>Titel</th>
                   <th>Beschrijving</th>
                   <th></th>
                 </tr>
                   @foreach($events as $event)
+
                     <tr>
+                      <!-- edit form -->
+                      <td>
+                        @include('cms.core.partials.edit_button', [
+                          'type' => 'event',
+                          'id' => $object->id
+                        ])
+                      </td>
+                      <!-- Verwijderen form -->
+                      <td>
+                        @include('cms.core.partials.delete_button', [
+                          'type' => 'event',
+                          'id' => $object->id
+                        ])
+                      </td>
+                      <td>
+                        {{ $event->id }}
+                      </td>
                       <td>
                         {{ $event->title }}
                       </td>
