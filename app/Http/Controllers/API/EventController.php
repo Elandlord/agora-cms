@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Carbon\Carbon;
 use App\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::alL();
+        $events = Event::where('date', '>', Carbon::now()->format('yyyy-mm-dd'))->orderBy('date', 'ASC')->get();
         return response()->json($events, 200);
     }
 

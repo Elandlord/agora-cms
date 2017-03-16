@@ -36,7 +36,7 @@
                   <th>Beschrijving</th>
                   <th></th>
                 </tr>
-                  @foreach($events as $event)
+                  @foreach($events as $object)
 
                     <tr>
                       <!-- edit form -->
@@ -54,13 +54,13 @@
                         ])
                       </td>
                       <td>
-                        {{ $event->id }}
+                        {{ $object->id }}
                       </td>
                       <td>
-                        {{ $event->title }}
+                        {{ $object->title }}
                       </td>
                       <td>
-                        {{ $event->description }}
+                        {{ $object->description }}
                       </td>
                     </tr>
                   @endforeach

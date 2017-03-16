@@ -56,7 +56,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='publish_date' class='form-control datepicker' />
+                        <input type='text' name='date' class='form-control datepicker' />
                       </div>
                     </td>
                   </tr>
@@ -73,7 +73,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='start_time' class='form-control timepicker' />
+                        <input type='text' name='time_start' class='form-control timepicker' />
                       </div>
                     </td>
                   </tr>
@@ -84,7 +84,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='end_time' class='form-control timepicker' />
+                        <input type='text' name='time_end' class='form-control timepicker' />
                       </div>
                     </td>
                   </tr>

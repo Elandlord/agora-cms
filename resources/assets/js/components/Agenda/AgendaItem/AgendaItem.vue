@@ -1,40 +1,36 @@
 <template>
-<div>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ">
-    <div class="border-bottom border-accent reset-padding">
-      <div  style="position: relative; top: 1px" class="inline-block space-inside-sides-xs space-inside-xs bg-accent reset-padding">
-        <h1 class="text-color-light block custom-h1 reset-padding">
-          ZA
-        </h1>
-        <span class="text-center text-color-light text-bold block  text-uppercase custom-span">
-          3 dec
-        </span>
-      </div>
-      <div class="inline-block text-color-light space-inside-xs space-inside-sides-xs">
-        <p class="text-bold text-color-light">14.00</p>
-        <p class="text-bold text-uppercase text-color-light">uur</p>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  space-outside-xs ">
+      <div class="col-lg-1  reset-padding "  >
+        <div class="bg-main text-center space-inside-xs">
+          <h1 class="text-color-light font-lg text-bold text-uppercase">
+             {{ agendaItem.day_name | toShortDayName }}
+            <span class="font-sm text-light block"> {{ agendaItem.publish_day}} {{agendaItem.month_name | toShortDateName}}</span>
+          </h1>
         </div>
-    </div>
-    <div class="bg-light-opacity-lg relative inline-block">
-      <div class="col-lg-6 col-md-6 col-sm-6 reset-padding">
-        <div  class="image bg-secondary">
-          <img class="width-auto" src="/images/test.jpg">
+        <div>
+          <p class="text-color-light space-inside-sides-xs space-inside-xs text-bold">
+            {{agendaItem.time_start | toTime}}
+            <span class="text-bold">UUR</span>
+          </p>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 reset-padding  space-inside-sides-sm space-inside-up-sm">
-        <h2 class="text-uppercase text-color-light space-outside-down-sm">{{ agendaItem.title }}</h2>
-        <p class="font-sm text-light text-color-light space-outside-down-sm">
-        {{ agendaItem.description }}
-        </p>
 
+      <div class="bg-light-opacity-lg relative inline-block col-lg-11 reset-padding">
+        <div class="col-lg-5 reset-padding border-left border-main">
+          <div  class="image bg-secondary">
+            <img class="width-auto" src="/images/test.jpg">
+          </div>
+        </div>
+
+        <div class="col-lg-7 reset-padding space-inside-sides-sm space-inside-sm">
+          <h1 class="text-color-light font-lg">KINDERDISCO SINTERKLAAS</h1>
+          <p class="text-color-light">Je moeder is een lekker ding</p>
+        </div>
+
+        <button  style="left: 45%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
+        <button   class="font-sm visible-xs space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
       </div>
-
-      <button  style="left: 53%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
-
-      <button   class="font-sm visible-xs space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</button>
-    </div>
   </div>
-</div>
 </template>
 
 <style >
@@ -48,6 +44,18 @@ h1.custom-h1 {
 export default {
   props: {
     agendaItem: null,
+  },
+  filters: {
+    toTime(time) {
+      return time.substring(0, 5)
+    },
+    toShortDateName(date) {
+      return date.substring(0,3);
+    },
+    toShortDayName(dayName) {
+      return dayName.substring(0,2)
+    }
+
   },
   mounted() {
     console.log('agenda-item is mounted');
