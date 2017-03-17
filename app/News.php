@@ -12,8 +12,9 @@ class News extends Model
 		'publish_month',
 		'publish_day',
 		'month_name',
-        'thumbnail',
         'day_name',
+        'thumbnail',
+        'square',
 	];
 
     protected $fillable = [
@@ -79,7 +80,7 @@ class News extends Model
         }else{
             return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
         }
-        
+
     }
 
     public function getSquareAttribute()
@@ -89,7 +90,7 @@ class News extends Model
         }else{
             return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
         }
-        
+
     }
 
 

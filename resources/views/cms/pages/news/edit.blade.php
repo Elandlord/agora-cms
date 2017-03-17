@@ -45,21 +45,21 @@
                            </td>
                         </tr>
                         <tr>
-                           <td> 
+                           <td>
                                 <label>Nieuwsbericht</label>
                                 <textarea class='form-control' name='body'>{{ $news->body }}</textarea>
                            </td>
 
                         </tr>
                         <tr>
-                           <td> 
+                           <td>
                                 <label>Auteur</label>
                                 <input type='text' class='form-control' value="{{ $news->author }}" name='author'/>
                            </td>
 
                         </tr>
                         <tr>
-                           <td> 
+                           <td>
                                 <label>Publicatiedatum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
@@ -71,7 +71,7 @@
 
                         </tr>
                          <tr>
-                           <td> 
+                           <td>
                                 <label>Datum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
@@ -91,7 +91,7 @@
                               </div>
 
                           </td>
-                         
+
                         </tr>
 
                     </tbody>
@@ -110,6 +110,7 @@
 
                 @endif
                 <image-uploader route="photo" model_id="{{$news->id}}" type="news" >
+                    <cropper route="cropper" aspectheight="1" aspectwidth="1" > </cropper>
                     <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
                 </image-uploader>
             </div>

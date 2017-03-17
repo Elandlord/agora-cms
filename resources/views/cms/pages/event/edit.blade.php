@@ -111,7 +111,7 @@
 
                 @endif
                 <image-uploader route="photo" model_id="{{$event->id}}" type="event" >
-                    <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+                    <cropper route="cropper" aspectheight="11" aspectwidth="16" > </cropper>
                 </image-uploader>
             </div>
 

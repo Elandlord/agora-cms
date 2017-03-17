@@ -3,17 +3,20 @@
 
 		<generic-page title="AGENDA">
 			<div class='container'>
-				<div class="col-lg-12 space-outside-up-md">
+<!--         <div class="col-lg-12 space-outside-up-md">
 					<h2 class='text-color-light inline'>FILTER</h2> <i class="text-color-light fa fa-caret-right fa-2x space-inside-left-xs inline" aria-hidden="true"></i>
 
-					<h2 class='text-color-light inline border border-light space-inside-sides-xs space-outside-left-lg'>TAG1</h2> 
+					<h2 class='text-color-light inline border border-light space-inside-sides-xs space-outside-left-lg'>TAG1</h2>
 
-					<h2 class='text-color-light inline border border-light space-inside-sides-xs space-outside-left-sm'>TAG2</h2> 
+					<h2 class='text-color-light inline border border-light space-inside-sides-xs space-outside-left-sm'>TAG2</h2>
 				</div>
 
 				<div class="col-lg-12 space-outside-up-md">
-						<i class="text-color-light fa fa-caret-right fa-2x space-inside-left-xs inline" aria-hidden="true"></i>	
-				</div>
+						<i class="text-color-light fa fa-caret-right fa-2x space-inside-left-xs inline" aria-hidden="true"></i>
+				</div> -->
+        <div class="col-lg-12">
+          <agenda-list headline="no" trimtext="no" ></agenda-list>
+        </div>
 			</div>
 		</generic-page>
 

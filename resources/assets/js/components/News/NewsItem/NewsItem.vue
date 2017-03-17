@@ -53,7 +53,10 @@
         },
 
         addDots(str){
-          return str + '...';
+          if(str.length > 200) {
+            return str + '...';
+          }
+          return str;
         }
       },
 
