@@ -76,7 +76,7 @@ class News extends Model
     public function getThumbnailAttribute()
     {
         if($this->photo() != null){
-            return "/images/news/{$this->id}/16x9/{$this->photo()->filename}";
+            return "/images/news/{$this->id}/16x11/{$this->photo()->filename}";
         }else{
             return "https://www.bakkerijkosters.nl/afbeeldingen/geen_afbeelding_beschikbaar_gr.gif";
         }

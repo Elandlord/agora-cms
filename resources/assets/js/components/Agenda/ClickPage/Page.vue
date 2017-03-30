@@ -23,7 +23,7 @@
 
                                     <h1 class='space-inside-xs right text-color-light'>2017</h1>
                                 </div>
-                                
+
 
                                 <h3 class='text-color-light space-outside-up-sm space-outside-left-sm'>GENRE</h3>
                                 <p class='text-color-light space-outside-left-sm'>NOG NIET AF</p>
@@ -43,9 +43,9 @@
 
                     <div class='col-lg-12 reset-padding'>
 
-                        <a :href="'#agenda/page/' + activity.id" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">RESERVEREN</a>
+                        <a href="#contact" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">RESERVEREN</a>
 
-                        <a :href="'#agenda/page/' + activity.id" class="hidden-xs space-outside-left-sm font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">EVENEMENT</a>
+                        <a  href="#contact" class="hidden-xs space-outside-left-sm font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">EVENEMENT</a>
 
 
                     </div>
@@ -63,7 +63,7 @@
                         </p>
 
                     </div>
-                    
+
                 </div>
             </div>
 

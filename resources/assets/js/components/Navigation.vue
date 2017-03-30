@@ -68,7 +68,7 @@
         methods: {
           close(){
             if ($(window).width() < 768) {
-              $('.navbar-toggle').click(); 
+              $('.navbar-toggle').click();
             }
           }
         }

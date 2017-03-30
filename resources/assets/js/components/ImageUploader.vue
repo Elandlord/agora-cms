@@ -8,6 +8,7 @@
                   id="my-awesome-dropzone">
                   <input type="hidden" name="model_id" :value="model_id">
                   <input type="hidden" name="model_type" :value="type">
+                  <input type="hidden" name="multi" :value="multi">
             </form>
         </div>
     </div>
@@ -27,6 +28,7 @@
             route: "",
             model_id: "",
             type: "",
+            multi: "",
         },
         data() {
             return {
