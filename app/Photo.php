@@ -32,6 +32,7 @@ class Photo extends Model
 	public function dir()
 	{
 		$dir = 'images/' . $this->type . '/';
+
 		Self::checkDirectory($dir);
 
 		$dir .= $this->model_id . '/';
@@ -93,8 +94,9 @@ class Photo extends Model
 
   public static function forMultiModel($type, $model_id, $file)
   {
+
     $filename = Self::uniqueFilename($file);
-    $photo = Photo::make($file, $model_id, $filename);
+    $photo = Photo::make($type, $model_id, $filename);
     Self::checkDirectory($photo->dir());
     Image::make($file)->save($photo->dir() . $photo->filename);
 

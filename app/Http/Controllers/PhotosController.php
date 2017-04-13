@@ -38,7 +38,7 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->get('multi') == true) {
+        if($request->get('multi') == 'true') {
             return Photo::forMultiModel($request->get('model_type'), $request->get('model_id'), $request->file('file') );
         }
         return Photo::forModel($request->get('model_type'), $request->get('model_id'), $request->file('file') );

@@ -31,6 +31,7 @@
             aspectheight: "",
             aspectwidth: "",
             dir: "",
+            multi: "",
         },
         data() {
             return {
@@ -116,7 +117,8 @@
                     '&x=' + xPercentage +
                     '&y=' + yPercentage +
                     '&dir=' + this.aspectwidth + 'x' + this.aspectheight +
-                    '&photo=' + JSON.stringify(this.photo)
+                    '&photo=' + JSON.stringify(this.photo) +
+                    '&multi=' + this.multi
                 , {}).then((response) => {
                     setTimeout(() => {
                         Event.fire('imageCropped' + this.getId(), response.data.croppedImage);

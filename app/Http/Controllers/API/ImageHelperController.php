@@ -22,21 +22,21 @@ class ImageHelperController extends Controller
 		Photo::checkDirectory($photo->dir());
 		Photo::checkDirectory($dir);
 
+		if($request->get('multi') != 'true') {
+			$files = File::allFiles($photo->dir());
 
-		$files = File::allFiles($photo->dir());
-
-		if(is_array($files)){
-			foreach($files as $file){
+			if(is_array($files)){
+				foreach($files as $file){
+					if($photo->multiple != true) {
+						File::delete($dir . $file->getFilename());
+					}
+				}
+			}else{
 				if($photo->multiple != true) {
-					File::delete($dir . $file->getFilename());
+					File::delete($dir . $files->getFilename());
 				}
 			}
-		}else{
-			if($photo->multiple != true) {
-				File::delete($dir . $files->getFilename());
-			}
 		}
-
 
 
 		$width = $request->get('width');
