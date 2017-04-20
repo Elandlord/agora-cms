@@ -5,14 +5,14 @@
 
       <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 
-        <div class='image border-left border-main' style='width: 100%;'>
+        <div class='image border-left border-main sm-border-none xs-border-none' style='width: 100%;'>
           <img class='width-auto' :src='news.thumbnail'/>
         </div>
 
       </div>
       <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding'>
 
-        <h3 class='text-color-light space-inside-sides-sm space-inside-sm text-uppercase'>{{ news.title }}</h3>
+        <h3 class='text-color-light space-inside-sides-sm space-inside-sm text-uppercase sm-font-md xs-font-md'>{{ news.title }}</h3>
 
         <p class='text-color-light space-inside-sides-sm xs-space-outside-down-sm'>
           {{ news.body | cutString | addDots }}

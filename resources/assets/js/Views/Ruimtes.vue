@@ -20,7 +20,7 @@
 					<!-- div with opacity -->
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main' />
+							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -39,7 +39,7 @@
 				<div class='row space-outside-up-md'>
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main' />
+							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -58,7 +58,7 @@
 				<div class='row space-outside-md'>
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main' />
+							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -88,7 +88,7 @@
 				<div class='row space-outside-up-md'>
 					<div class='col-lg-4'>
 						<div class='image'>
-							<img src='images/agora4.png' class='border-right border-main' />
+							<img src='images/agora4.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 					</div>
 

@@ -6,7 +6,7 @@
 				<div class='row space-outside-up-md'>
 					<div class='col-lg-4'>
 						<div class='image'>
-							<img src='images/agora4.png' class='border-right border-main' />
+							<img src='images/agora4.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 					</div>
 
@@ -39,7 +39,7 @@
 
 					<div class='col-lg-4 reset-padding'>
 
-					<img src='images/agora5.png' class='border-right border-accent' />
+					<img src='images/agora5.png' class='border-right border-accent sm-border-none xs-border-none' />
 
 					</div>
 
@@ -57,7 +57,7 @@
 
 					<div class='col-lg-4 reset-padding'>
 
-					<img src='images/agora6.png' class='border-right border-accent' />
+					<img src='images/agora6.png' class='border-right border-accent sm-border-none xs-border-none' />
 
 					</div>
 
@@ -75,7 +75,7 @@
 
 					<div class='col-lg-4 reset-padding'>
 
-					<img src='images/agora7.png' class='border-right border-accent' />
+					<img src='images/agora7.png' class='border-right border-accent sm-border-none xs-border-none' />
 
 					</div>
 

@@ -7,7 +7,7 @@
 
 			<div class='border-top border-accent '>
 				<div class='bg-accent reset-padding inline-block space-inside-sides-lg'>
-					<h2 class='text-color-light space-inside-sm text-center text-uppercase'>{{ news.title }}</h2>
+					<h2 class='text-color-light space-inside-sm text-center text-uppercase sm-font-md xs-font-md'>{{ news.title }}</h2>
 				</div>
 
 				<div class='space-inside-right-xs  inline-block right'>

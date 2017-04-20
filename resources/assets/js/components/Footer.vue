@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row ">          
                 <div class="col-lg-12 text-center">
-                    <h2 class='text-color-light'>VERBINDEND - DYNAMISCH - TALENT</h2>
+                    <h2 class='text-color-light sm-font-md xs-font-sm'>VERBINDEND - DYNAMISCH - TALENT</h2>
                 </div>
             </div>
         </div>

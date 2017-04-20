@@ -682,6 +682,16 @@ a.btn-round, input[type=submit].btn-round, button.btn-round{
 
 .border-none{ border: none; }
 
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	.sm-border-none{ border: none !important; }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	.xs-border-none{ border: none !important;}
+}
+
 /* ---- color ---- */
 
 .border-light{ border-color: $background-color-light; }
