@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\News;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\NewsRequest;
 use App\Photo;
 
 class NewsController extends Controller
@@ -36,10 +36,16 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        News::create($request->all());
-        return redirect('cms/news');
+        $news = News::create([
+            'title' => $request->get('titel'),
+            'body' => $request->get('beschrijving'),
+            'author' => $request->get('auteur'),
+            'publish_date' => $request->get('publicatiedatum'),
+            'occurence_date' => $request->get('aanvangdatum'),
+        ]);
+        return redirect('cms/news/' . $news->id . '/edit');
     }
 
     /**
@@ -84,9 +90,16 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NewsRequest $request, $id)
     {
-        News::find($id)->update($request->all());
+        $news = News::find($id)->update([
+            'title' => $request->get('titel'),
+            'body' => $request->get('beschrijving'),
+            'author' => $request->get('auteur'),
+            'publish_date' => $request->get('publicatiedatum'),
+            'occurence_date' => $request->get('aanvangdatum'),
+        ]);
+
         return redirect('cms/news');
     }
 

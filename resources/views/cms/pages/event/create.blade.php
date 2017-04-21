@@ -16,6 +16,17 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
+          @if (count($errors) > 0)
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+        </div>
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Toevoegen</h3>
@@ -40,13 +51,13 @@
                   <tr>
                     <td>
                       <label>Naam</label>
-                      <input type='text' class='form-control' name='title'/>
+                      <input type='text' class='form-control' name='titel'/>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <label>Locatie</label>
-                      <input type='text' class='form-control' name='location'/>
+                      <input type='text' class='form-control' name='locatie'/>
                     </td>
                   </tr>
                   <tr>
@@ -56,14 +67,14 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='date' class='form-control datepicker' />
+                        <input type='text' name='datum' class='form-control datepicker' />
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <label>Beschrijving</label>
-                      <textarea class='form-control' name='description'></textarea>
+                      <textarea class='form-control' name='beschrijving'></textarea>
                     </td>
                   </tr>
                   <tr>
@@ -73,7 +84,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='time_start' class='form-control timepicker' />
+                        <input type='text' name='starttijd' class='form-control timepicker' />
                       </div>
                     </td>
                   </tr>
@@ -84,7 +95,18 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type='text' name='time_end' class='form-control timepicker' />
+                        <input type='text' name='eindtijd' class='form-control timepicker' />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Eindtijd</label>
+                      <div class="input-group date">
+                        <div class="input-group-addon">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                        <input type='text' name='eindtijd' class='form-control timepicker' />
                       </div>
                     </td>
                   </tr>

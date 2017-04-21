@@ -16,6 +16,17 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
+          @if (count($errors) > 0)
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+        </div>
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Aanpassen</h3>
@@ -41,24 +52,24 @@
                         <tr>
                            <td>
                                 <label>Titel</label>
-                                <input type='text' class='form-control' value="{{ $album->title }}" name='title'/>
+                                <input type='text' class='form-control' value="{{ $album->title }}" name='titel'/>
                            </td>
                         </tr>
                         <tr>
-                           <td> 
+                           <td>
                                 <label>Beschrijving</label>
-                                <textarea class='form-control' name='body'>{{ $album->body }}</textarea>
+                                <textarea class='form-control' name='beschrijving'>{{ $album->body }}</textarea>
                            </td>
 
                         </tr>
                          <tr>
-                           <td> 
+                           <td>
                                 <label>Datum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='date' value="{{ $album->date }}" class='form-control datepicker' />
+                                  <input type='text' name='datum' value="{{ $album->date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
@@ -72,7 +83,7 @@
                               </div>
 
                           </td>
-                         
+
                         </tr>
 
                     </tbody>

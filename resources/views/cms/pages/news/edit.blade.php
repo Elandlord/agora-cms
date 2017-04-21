@@ -16,6 +16,18 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
+          @if (count($errors) > 0)
+              <div class="alert alert-danger ">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+
+        </div>
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Aanpassen</h3>
@@ -41,20 +53,20 @@
                         <tr>
                            <td>
                                 <label>Titel</label>
-                                <input type='text' class='form-control' value="{{ $news->title }}" name='title'/>
+                                <input type='text' class='form-control' value="{{ $news->title }}" name='titel'/>
                            </td>
                         </tr>
                         <tr>
                            <td>
                                 <label>Nieuwsbericht</label>
-                                <textarea class='form-control' name='body'>{{ $news->body }}</textarea>
+                                <textarea class='form-control' name='beschrijving'>{{ $news->body }}</textarea>
                            </td>
 
                         </tr>
                         <tr>
                            <td>
                                 <label>Auteur</label>
-                                <input type='text' class='form-control' value="{{ $news->author }}" name='author'/>
+                                <input type='text' class='form-control' value="{{ $news->author }}" name='auteur'/>
                            </td>
 
                         </tr>
@@ -65,19 +77,19 @@
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='publish_date' value="{{ $news->publish_date }}" class='form-control datepicker' />
+                                  <input type='text' name='publicatiedatum' value="{{ $news->publish_date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
                         </tr>
                          <tr>
                            <td>
-                                <label>Datum</label>
+                                <label>aanvangdatum</label>
                                 <div class="input-group date">
                                   <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                   </div>
-                                  <input type='text' name='occurence_date' value="{{ $news->occurence_date }}" class='form-control datepicker' />
+                                  <input type='text' name='aanvangdatum' value="{{ $news->occurence_date }}" class='form-control datepicker' />
                                 </div>
                            </td>
 
