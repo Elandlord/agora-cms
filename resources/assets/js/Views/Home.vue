@@ -18,11 +18,11 @@
 				<div class='row space-outside-up-md'>
           <div class='col-lg-6 col-xs-12'>
             <h1 class="text-color-light visible-xs text-center space-outside-down-md text-uppercase">Agenda</h1>
-            <agenda-list limit="0" headline="yes" trimtext="yes"></agenda-list>
+            <agenda-list limit="3" headline="yes" trimtext="yes"></agenda-list>
           </div>
           <div class='col-lg-6 col-xs-12'>
             <h1 class="text-color-light visible-xs text-center text-uppercase space-outside-up-md">Nieuws</h1>
-            <news-list class="xs-space-outside-up-md md-space-outside-up-md sm-space-outside-up-md"></news-list>
+            <news-list limit="3" class="xs-space-outside-up-md md-space-outside-up-md sm-space-outside-up-md"></news-list>
           </div>
         </div>
 			</div>

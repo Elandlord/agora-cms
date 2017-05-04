@@ -10,6 +10,10 @@
 
     export default {
 
+        props: {
+         limit: null,
+        },
+
     	data() {
 		   return {
 		      news: null,
@@ -22,7 +26,13 @@
 
             News.all((news) => {
                 this.newsHeadline = news.shift();
-                this.news = news;
+
+                if(this.limit != null){
+                    this.news = news.splice(0, this.limit);
+                }else{
+                    this.news = news;
+                }
+
             });
         }
     }
