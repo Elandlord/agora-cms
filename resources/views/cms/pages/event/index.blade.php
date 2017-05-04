@@ -71,7 +71,20 @@
                       <td>
                         {{ $object->price }}
                       </td>
+                      <td>
+                        {{ $object->date }}
+                      </td>
+                      <td>
+                        {{ $object->description }}
+                      </td>
+                      <td>
+                        {{ $object->time_start }}
+                      </td>
+                      <td>
+                        {{ $object->time_end }}
+                      </td>
                     </tr>
+
                   @endforeach
                 </tbody>
               </table>
