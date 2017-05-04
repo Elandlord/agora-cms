@@ -18,7 +18,7 @@
 				<div class='row space-outside-up-md'>
           <div class='col-lg-6 col-xs-12'>
             <h1 class="text-color-light visible-xs text-center space-outside-down-md text-uppercase">Agenda</h1>
-            <agenda-list headline="yes" trimtext="yes"></agenda-list>
+            <agenda-list limit="0" headline="yes" trimtext="yes"></agenda-list>
           </div>
           <div class='col-lg-6 col-xs-12'>
             <h1 class="text-color-light visible-xs text-center text-uppercase space-outside-up-md">Nieuws</h1>
@@ -35,7 +35,9 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
+
+
         }
     }
 </script>

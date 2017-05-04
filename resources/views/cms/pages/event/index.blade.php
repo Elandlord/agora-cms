@@ -31,10 +31,15 @@
               <table class="table table-hover">
                 <tbody>
                 <tr>
-                  <th>#</th>
-                  <th>Titel</th>
-                  <th>Beschrijving</th>
                   <th></th>
+                  <th></th>
+                  <th>#<span class='ion-arrow-down-b table-head'></span></th>
+                  <th>Titel</th>
+                  <th>Locatie</th>
+                  <th>Datum</th>
+                  <th>Beschrijving</th>
+                  <th>Starttijd</th>
+                  <th>Eindtijd</th>
                 </tr>
                   @foreach($events as $object)
 
@@ -60,7 +65,19 @@
                         {{ $object->title }}
                       </td>
                       <td>
+                        {{ $object->location }}
+                      </td>
+                      <td>
+                        {{ $object->date }}
+                      </td>
+                      <td>
                         {{ $object->description }}
+                      </td>
+                      <td>
+                        {{ $object->time_start }}
+                      </td>
+                      <td>
+                        {{ $object->time_end }}
                       </td>
                     </tr>
                   @endforeach

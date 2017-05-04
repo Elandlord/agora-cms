@@ -20,6 +20,7 @@
     props: {
       headline: null,
       trimtext: null,
+      limit: 0,
     },
     data() {
       return {
@@ -33,7 +34,12 @@
 
       AgendaItem.all((agendaItems) => {
         this.agendaHeadline = agendaItems.shift();
-        this.agendaItems = agendaItems;
+        if(limit != 0){
+          this.agendaItems = agendaItems.splice(0, limit);
+        }else{
+          this.agendaItems = agendaItems;  
+        }
+
         console.log(this.agendaItems);
       });
 

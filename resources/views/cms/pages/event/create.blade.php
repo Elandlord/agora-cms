@@ -101,17 +101,6 @@
                   </tr>
                   <tr>
                     <td>
-                      <label>Eindtijd</label>
-                      <div class="input-group date">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type='text' name='eindtijd' class='form-control timepicker' />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
                       <div class="form-group">
                         <button class="btn btn-success" type="submit" >Toevoegen</button>
                       </div>
