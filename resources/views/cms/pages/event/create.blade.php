@@ -62,6 +62,12 @@
                   </tr>
                   <tr>
                     <td>
+                      <label>Prijs</label>
+                      <input type='text' class='form-control' name='prijs'/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <label>Datum</label>
                       <div class="input-group date">
                         <div class="input-group-addon">
@@ -85,17 +91,6 @@
                           <i class="fa fa-calendar"></i>
                         </div>
                         <input type='text' name='starttijd' class='form-control timepicker' />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Eindtijd</label>
-                      <div class="input-group date">
-                        <div class="input-group-addon">
-                          <i class="fa fa-calendar"></i>
-                        </div>
-                        <input type='text' name='eindtijd' class='form-control timepicker' />
                       </div>
                     </td>
                   </tr>

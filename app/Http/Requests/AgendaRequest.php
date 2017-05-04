@@ -13,7 +13,7 @@ class AgendaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class AgendaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'titel' => 'required',
+            'locatie' => 'required',
+            'prijs' => 'required',
+            'datum' => 'required',
+            'beschrijving' => 'required',
+            'starttijd' => 'required',
+            'eindtijd' => 'required',
         ];
     }
 }

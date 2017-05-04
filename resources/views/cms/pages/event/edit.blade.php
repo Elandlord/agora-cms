@@ -63,6 +63,12 @@
                     </tr>
                     <tr>
                       <td>
+                        <label>Prijs</label>
+                        <input type='text' value="{{ $event->price }}"  class='form-control' name='prijs'/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <label>Datum</label>
                         <div class="input-group date">
                           <div class="input-group-addon">

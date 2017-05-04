@@ -37,8 +37,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        Event::create($request->all());
-        return redirect('cms/event');
+        $event = Event::create([
+            'title' => $request->get('titel'),
+            'location' => $request->get('locatie'),
+            'date' => $request->get('datum'),
+            'description' => $request->get('beschrijving'),
+            'time_start' => $request->get('starttijd'),
+            'time_end' => $request->get('eindtijd'),
+            'price' => $request->get('prijs'),
+        ]);
+
+        return redirect('cms/event/' . $event->id . '/edit');
     }
 
     /**
@@ -83,7 +92,15 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Event::find($id)->update($request->all());
+        Event::find($id)->update([
+            'title' => $request->get('titel'),
+            'location' => $request->get('locatie'),
+            'date' => $request->get('datum'),
+            'description' => $request->get('beschrijving'),
+            'time_start' => $request->get('starttijd'),
+            'time_end' => $request->get('eindtijd'),
+            'price' => $request->get('prijs'),
+        ]);
         return redirect('cms/event');
     }
 

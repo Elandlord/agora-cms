@@ -31,12 +31,18 @@
               <table class="table table-hover">
                 <tbody>
                 <tr>
+                  <th></th>
+                  <th></th>
                   <th>#</th>
                   <th>Titel</th>
+                  <th>Locatie</th>
+                  <th>Prijs</th>
+                  <th>Datum</th>
                   <th>Beschrijving</th>
-                  <th></th>
+                  <th>Starttijd</th>
+                  <th>Eindtijd</th>
                 </tr>
-                  @foreach($events as $object)
+                @foreach($events as $object)
 
                     <tr>
                       <!-- edit form -->
@@ -60,7 +66,10 @@
                         {{ $object->title }}
                       </td>
                       <td>
-                        {{ $object->description }}
+                        {{ $object->location }}
+                      </td>
+                      <td>
+                        {{ $object->price }}
                       </td>
                     </tr>
                   @endforeach
