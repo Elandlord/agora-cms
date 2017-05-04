@@ -30,7 +30,7 @@ class EventRequest extends FormRequest
             'beschrijving' => 'required',
             'starttijd' => 'required',
             'eindtijd' => 'required',
-            'price' => 'required',
+            'prijs' => 'required',
         ];
     }
 }

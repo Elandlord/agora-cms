@@ -45,7 +45,7 @@
 
                         <a href="#contact" class="hidden-xs font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">RESERVEREN</a>
 
-                        <a  href="#contact" class="hidden-xs space-outside-left-sm font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">EVENEMENT</a>
+                        <a  href="#contact" style="display:hidden;" class="hidden-xs space-outside-left-sm font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">EVENEMENT</a>
 
 
                     </div>

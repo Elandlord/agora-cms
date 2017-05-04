@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\Photo;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\EventRequest;
 class EventController extends Controller
 {
     /**
@@ -35,7 +35,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $event = Event::create([
             'title' => $request->get('titel'),
@@ -90,7 +90,7 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EventRequest $request, $id)
     {
         Event::find($id)->update([
             'title' => $request->get('titel'),

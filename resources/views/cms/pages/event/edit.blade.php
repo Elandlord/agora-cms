@@ -52,15 +52,16 @@
                       <tr>
                       <td>
                         <label>Naam</label>
-                        <input type='text' value="{{ $event->title }}" class='form-control' name='title'/>
+                        <input type='text' value="{{ $event->title }}" class='form-control' name='titel'/>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <label>Locatie</label>
-                        <input type='text' value="{{ $event->location }}"  class='form-control' name='location'/>
+                        <input type='text' value="{{ $event->location }}"  class='form-control' name='locatie'/>
                       </td>
                     </tr>
+
                     <tr>
                       <td>
                         <label>Prijs</label>
@@ -74,14 +75,14 @@
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type='text' value="{{ $event->date }}"  name='date' class='form-control datepicker' />
+                          <input type='text' value="{{ $event->date }}"  name='datum' class='form-control datepicker' />
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <label>Beschrijving</label>
-                        <textarea class='form-control' name='description'>{{ $event->description }}</textarea>
+                        <textarea class='form-control' name='beschrijving'>{{ $event->description }}</textarea>
                       </td>
                     </tr>
                     <tr>
@@ -91,7 +92,7 @@
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type='text' name='time_start' value="{{ $event->time_start }}"  class='form-control timepicker' />
+                          <input type='text' name='starttijd' value="{{ $event->time_start }}"  class='form-control timepicker' />
                         </div>
                       </td>
                     </tr>
@@ -102,7 +103,7 @@
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type='text' name='time_end' value="{{ $event->time_end }}"  class='form-control timepicker' />
+                          <input type='text' name='eindtijd' value="{{ $event->time_end }}"  class='form-control timepicker' />
                         </div>
                       </td>
                     </tr>
