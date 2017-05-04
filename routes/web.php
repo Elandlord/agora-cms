@@ -34,6 +34,9 @@ Route::get('/', 'HomepageController@entryPointVue');
 // Route::get('/ruimtes', 'RuimtesController@index');
 // Route::get('/contact', 'ContactController@index');
 
+// MAILING ROUTES
+Route::post('/mail/contact-mail', 'MailController@contactMail');
+
 
 Route::auth();
 Auth::routes();

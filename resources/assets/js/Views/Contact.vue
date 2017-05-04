@@ -8,15 +8,17 @@
 					<div class='col-lg-12 space-outside-md'>
 						<h2 class='text-color-light text-center space-outside-sm'>NEEM CONTACT MET ONS OP</h2>
 
-						<form method='POST'>
+						<form method='post' action='mail/contact-mail'>
 
-							<input type='text' name='naam' placeholder='NAAM' class='form-control bg-none text-color-light border-light' required/>
+							<input type='text' name='name' placeholder='NAAM' class='form-control bg-none text-color-light border-light' required/>
 
 							<input type='text' name='email' placeholder="EMAIL" class='form-control space-outside-sm bg-none text-color-light border-light' required/>
 
 							<input type='text' name='phone' placeholder="TELEFOON" class='form-control bg-none text-color-light border-light' required/>
 
 							<textarea name='message' class='text-color-light form-control bg-none border-light space-outside-sm' placeholder="BERICHT" required></textarea>
+
+							<input type='hidden' name='_token' :value="axios"  />
 
 							<button  class="font-md text-uppercase space-inside-sides-md space-inside-sm bg-accent border-none text-color-light right">Versturen</button>
 
@@ -26,20 +28,42 @@
 
 				<div class='row'>
 					<div class='col-lg-12'>
-
-						<h2 class='text-color-light inline bg-accent space-inside-up-sm space-inside-sides-sm xs-font-sm hidden-xs'>LOCATIE</h2>
-						<h4 class='text-color-light inline right space-outside-sides-md xs-font-xs'>Rodenburg 1B • 9351 PV Leek</h4>
-						<h4 class='text-color-light inline right space-outside-sides-md xs-font-xs'>Ma - Vr: 09:00 - 17:00</h4>
-						<h4 class='text-color-light inline right space-outside-sides-md xs-font-xs'>info@agoraleek.nl</h4>
-
+						<h2 class='
+							text-color-light 
+							inline 
+							bg-accent 
+							space-inside-up-sm space-inside-sides-sm 
+							xs-font-sm sm-font-md 
+							hidden-xs'>LOCATIE
+						</h2>
+						<h4 class='
+							text-color-light 
+							inline 
+							right 
+							space-outside-sides-md sm-space-outside-sides-md-none xs-space-outside-up-xs
+							sm-font-md xs-font-xs'>Rodenburg 1B • 9351 PV Leek
+						</h4>
+						<h4 class='
+							text-color-light 
+							inline 
+							right 
+							space-outside-sides-md xs-space-outside-up-xs
+							sm-font-md xs-font-xs'>Ma - Vr: 09:00 - 17:00
+						</h4>
+						<h4 class='
+							text-color-light 
+							inline 
+							right 
+							space-outside-sides-md xs-space-outside-up-xs
+							sm-font-md xs-font-xs'>info@agoraleek.nl
+						</h4>
 					</div>
-
 				</div>
 			</div>
 
 
 
-			<div class='container-fluid padding-reset'>
+			<div class='container-fluid reset-padding'>
 
 				<div class='divider bg-accent space-inside-sm'></div>
 
@@ -54,8 +78,15 @@
 
 <script>
     export default {
+
+    	data(){
+    		return{
+    			axios: axios.defaults.headers.common['X-CSRF-TOKEN']
+    		}
+    	},
+
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
         }
     }
 </script>
