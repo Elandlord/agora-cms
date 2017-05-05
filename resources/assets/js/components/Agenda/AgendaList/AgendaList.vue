@@ -33,7 +33,11 @@
       console.log('agenda-list component is mounted');
 
       AgendaItem.all((agendaItems) => {
-        this.agendaHeadline = agendaItems.shift();
+
+        if(this.headline != null){
+          this.agendaHeadline = agendaItems.shift();
+        }
+
         if(this.limit != null){
           this.agendaItems = agendaItems.splice(0, this.limit);
         }else{
