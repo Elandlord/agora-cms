@@ -22,7 +22,11 @@
                                 <img :src='activity.thumbnail' class='border-right border-main xs-border-none' />
                             </div>
 
-                            <div class='col-lg-6 col-md-6 col-sm-6 reset-padding xs-text-center'>
+                            <div class='
+                                col-lg-6 col-md-6 col-sm-6
+                                reset-padding
+                                xs-text-center
+                            '>
                                 <div class='
                                     bg-main
                                     space-inside-sm space-inside-sides-sm

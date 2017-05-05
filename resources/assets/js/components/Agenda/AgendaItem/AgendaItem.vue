@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  space-outside-up-sm ">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 space-outside-down-sm  xs-space-outside-sm ">
     <a :href="'#/agenda/page/' +agendaItem.id">
       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 reset-padding "  >
           <div class="bg-main text-center space-inside-xs">
@@ -22,7 +22,7 @@
 
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reset-padding border-left border-main xs-border-none">
             <div class="image bg-secondary relative no-overflow">
-              <img style="height: 100%;" :src="agendaItem.thumbnail" />
+              <img  :src="agendaItem.thumbnail" />
             </div>
           </div>
 
@@ -32,19 +32,28 @@
             <p class="text-color-light" v-if="trimtext == 'no'"> {{ agendaItem.description }} </p>
           </div>
 
-          <a :href="'#/agenda/page/' + agendaItem.id"  style="left: 53%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs   text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</a>
-
-          <a :href="'#/agenda/page/' +agendaItem.id"
+          <a :href="'#/agenda/page/' + agendaItem.id"
+            style="left: 53%; bottom: 10px;"
             class="
               font-sm text-uppercase text-color-light
-              visible-xs
-              space-outside-sm space-outside-sides-sm space-inside-sides-sm space-inside-xs
+              position-bottom-center
+              hidden-xs
+              space-inside-sides-sm space-inside-xs
               bg-accent
               border-none
             ">Lees meer</a>
 
+            <div style="clear:both;"></div>
 
-
+            <a :href="'#/agenda/page/' + agendaItem.id "
+              class="
+                relative
+                font-sm text-uppercase text-color-light
+                space-inside-sides-sm space-inside-xs space-outside-sm space-outside-left-sm
+                bg-accent
+                border-none
+                hidden-sm hidden-md hidden-lg inline-block
+              ">Lees meer</a>
         </div>
       </a>
   </div>
