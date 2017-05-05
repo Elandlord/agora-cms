@@ -20,13 +20,13 @@
 
 					</div>
 
-					<div class='col-lg-6'>
+<!-- 					<div class='col-lg-6 hidden-xs'>
 
 						<h2 class='text-color-light bg-accent space-inside-sides-sm space-inside-up-xs inline-block'>INSTAGRAM</h2>
 						
 						<div class='divider bg-accent space-inside-xs'></div>
 
-					</div>
+					</div> -->
 				</div>
 			</div>
 
