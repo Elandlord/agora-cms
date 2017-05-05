@@ -41,6 +41,11 @@ class Event extends Model
       '12' => 'december',
     ];
 
+    public function tags()
+    {
+      return $this->belongsToMany('App\Tag');
+    }
+
     public function getDayNameAttribute() {
       setlocale(LC_TIME, 'Dutch');
       $date = Carbon::createFromDate($this->year, $this->month, $this->day);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Tag;
 use App\Photo;
 use Illuminate\Http\Request;
 use App\Http\Requests\EventRequest;
@@ -15,7 +16,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::alL();
+        $events = Event::all();
         return view('cms.pages.event.index', compact('events'));
     }
 
@@ -26,7 +27,10 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('cms.pages.event.create');
+
+        $tags = Tag::all();
+
+        return view('cms.pages.event.create', compact('tags'));
     }
 
     /**
@@ -46,6 +50,8 @@ class EventController extends Controller
             'time_end' => $request->get('eindtijd'),
             'price' => $request->get('prijs'),
         ]);
+
+        $event->tags()->attach($request->get('tag'));
 
         return redirect('cms/event/' . $event->id . '/edit');
     }

@@ -85,6 +85,18 @@
                   </tr>
                   <tr>
                     <td>
+                      <label>Genre</label>
+                      <select class='form-control' name='tag'>
+                        @foreach($tags as $tag)
+
+                          <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+
+                        @endforeach
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <label>Starttijd</label>
                       <div class="input-group date">
                         <div class="input-group-addon">

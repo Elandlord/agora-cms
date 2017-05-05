@@ -48,11 +48,11 @@
                                     space-outside-up-sm space-outside-left-sm
                                     xs-inline-block
                                 '>GENRE</h3>
-                                <p class='
+                                <p v-for='tag in activity.tag' v-if='activity != null' class='
                                     text-color-light
                                     space-outside-left-sm xs-space-outside-up-sm
                                     xs-inline-block
-                                '>NOG NIET AF</p>
+                                '>{{ tag.name }}</p>
 
                                 <h3 class='
                                     text-color-light
@@ -103,6 +103,7 @@
 
 <script>
     import Activity from '../../../Models/Activity';
+    import Tag from '../../../Models/Tag';
 
     export default {
 
@@ -132,7 +133,20 @@
 
         beforeMount(){
             Activity.find(this.$route.params.id, (activity) => {
-                this.activity = activity;
+
+                activity.with('tag', (tags) => {
+                    return tags.map((tag) => {
+                        return new Tag(tag);
+                    });
+                });
+
+
+
+                setTimeout(() => {
+                    this.activity = activity;
+                    console.log(this.activity);
+                }, 400);   
+
             });
         },
 

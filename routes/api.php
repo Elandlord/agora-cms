@@ -33,4 +33,5 @@ Route::resource('news', 'API\NewsController');
 // ------ CUSTOM ROUTES FOR SPECIFIC APPROACH ----------------
 Route::get('page/{id}/sections', 'API\SectionController@index');
 Route::get('news/{id}/photo', 'API\NewsPhotoController@index');
+Route::get('event/{id}/tag', 'API\ActivityTagController@index');
 Route::get('section/where/{slug}', 'FindSectionsController@index')->where(['slug' => '.*']);

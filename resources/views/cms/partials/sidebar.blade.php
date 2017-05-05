@@ -78,6 +78,20 @@
           ]
         ])
 
+        <!--  Tags -->
+        @include('cms.navigation.navigation-dropdown', [
+          'title' => "Tags",
+          'icon' => 'ion ion-pricetags',
+          'linkGroup' => [
+            [
+              'header' => "Tags",
+              'cms/tag' => 'Overzicht',
+              'cms/tag/create' => 'Toevoegen',
+            ],
+          ]
+        ])
+
+
       </ul>
     </section>
   </aside>
