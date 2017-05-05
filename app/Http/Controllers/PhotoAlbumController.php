@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Photo;
 class PhotoAlbumController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class PhotoAlbumController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -56,7 +56,10 @@ class PhotoAlbumController extends Controller
      */
     public function edit($id)
     {
-        //
+        $photo = Photo::find($id);
+        return view('cms.pages.photo-album.edit', compact(
+            'photo'
+        ));
     }
 
     /**

@@ -9,10 +9,10 @@
                   <input type="hidden" name="model_id" :value="model_id">
                   <input type="hidden" name="model_type" :value="type">
                   <input type="hidden" name="multi" :value="multi">
+                  <input type="hidden" name="photo_id" :value="photo_id">
             </form>
         </div>
     </div>
-
 </div>
 </template>
 
@@ -29,6 +29,7 @@
             model_id: "",
             type: "",
             multi: "",
+            photo_id: "",
         },
         data() {
             return {

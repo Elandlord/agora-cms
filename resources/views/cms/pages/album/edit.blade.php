@@ -94,18 +94,17 @@
 
               @foreach($photos as $photo)
                 <div class="col-lg-3 thumb">
-                  <a class="thumbnail" href="/photo/album/{{$photo->id}}/edit">
-                    <img src="/images/{{ $photo->type }}/{{ $photo->model_id }}/{{ $photo->filename }}">
+                  <a class="thumbnail" href="/cms/photo/album/{{$photo->id}}/edit">
+                    <img src="/images/{{ $photo->type }}/{{ $photo->model_id }}/16x9/{{ $photo->filename }}">
                   </a>
                 </div>
               @endforeach
 
-
-            <div id="app">
-                <image-uploader route="photo" multi="true" model_id="{{$album->id}}" type="album" >
-                    <cropper route="cropper" multi="true" aspectheight="9" aspectwidth="16" > </cropper>
-                </image-uploader>
-            </div>
+              <div id="app">
+                  <image-uploader route="photo" multi="true" model_id="{{$album->id}}" type="album" >
+                      <cropper route="cropper" multi="true" aspectheight="9" aspectwidth="16" > </cropper>
+                  </image-uploader>
+              </div>
 
           </div>
           <!-- /.box -->

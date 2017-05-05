@@ -41,7 +41,7 @@ class Photo extends Model
 		return $dir;
 	}
 
-	private static function uniqueFilename($file)
+	public static function uniqueFilename($file)
 	{
 		return Carbon::now()->toDateString() . '-' .Carbon::now()->second . '-' . $file->getClientOriginalName();
 	}
@@ -70,6 +70,8 @@ class Photo extends Model
       ]);
   }
 
+
+
 	public static function makeOrUpdate($type, $model_id, $filename)
 	{
 		$photo = Self::exists($type, $model_id);
@@ -91,6 +93,19 @@ class Photo extends Model
         }
         return $photo;
 	}
+
+  public static function forUpdate($photo_id, $file)
+  {
+
+    $photo = Photo::find($photo_id);
+    $photo->update([
+        'filename' => Self::uniqueFilename($file),
+    ]);
+    Self::checkDirectory($photo->dir());
+    Image::make($file)->save($photo->dir() . $photo->filename);
+    return $photo;
+  }
+
 
   public static function forMultiModel($type, $model_id, $file)
   {

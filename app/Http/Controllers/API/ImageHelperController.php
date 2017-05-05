@@ -12,27 +12,31 @@ class ImageHelperController extends Controller
 {
 	public function index(Request $request)
 	{
+
+
 		// find the photo record in the database
 		$photo = json_decode( $request->get('photo') );
 		$photo = Photo::find($photo->id);
 
 		$dir = $photo->dir() . $request->get('dir') . '/';
-
+		$multiple = $request->get('multi');
 		// directory checks
 		Photo::checkDirectory($photo->dir());
 		Photo::checkDirectory($dir);
 
-		if($request->get('multi') != 'true') {
+		if($multiple != 'true') {
 			$files = File::allFiles($photo->dir());
 
 			if(is_array($files)){
 				foreach($files as $file){
-					if($photo->multiple != true) {
+					if($multiple != 'true') {
+
 						File::delete($dir . $file->getFilename());
 					}
 				}
 			}else{
-				if($photo->multiple != true) {
+				if($multiple == 'true') {
+
 					File::delete($dir . $files->getFilename());
 				}
 			}

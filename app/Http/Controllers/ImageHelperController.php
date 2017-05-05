@@ -24,6 +24,7 @@ class ImageHelperController extends Controller
 		Photo::checkDirectory($dir);
 
 		if($request->get('multi') != 'true') {
+
 			$files = File::allFiles($photo->dir());
 
 			if(is_array($files)){
