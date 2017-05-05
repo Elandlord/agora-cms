@@ -32,7 +32,16 @@
 
     h2 {
       color: $light-color !important;
-      font-size:80px;
+
+      /* Large desktops and laptops */
+      @media (min-width: 1200px) { font-size:65px; }
+
+      /* Landscape tablets and medium desktops */
+      @media (min-width: 992px) and (max-width: 1199px) { font-size:50px; }
+
+      /* Portrait tablets and small desktops */
+      @media (min-width: 768px) and (max-width: 991px) { font-size:30px; }
+
       text-align: center;
       display: block;
       margin-left: auto;

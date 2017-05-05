@@ -16,7 +16,7 @@ class CreateSectionsTable extends Migration
             $table->increments('id');
             $table->string('title', 100)->nullable();
             $table->mediumText('body')->nullable();
-            $table->integer('page_id')->unsigned();
+            $table->integer('page_id')->unsigned()->nullable();
             $table->integer('page_position')->nullable();
 
             $table->timestamps();

@@ -2,7 +2,8 @@
 	<div class='text-over-image hidden-xs'>
     	<img src='images/agora-banner-pagina.jpg' />
         <div class="header-on-image">
-            <h2 class='text-center'> {{ title | uppercase }} </h2>
+            <h2 class='
+            text-center'> {{ title | uppercase }} </h2>
         </div>
 
     </div>

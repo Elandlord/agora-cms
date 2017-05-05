@@ -16,11 +16,11 @@
 
 
 				<!-- start first box -->
-				<div class='row space-outside-up-md'>
+				<div class='row space-outside-up-md' text-inject>
 					<!-- div with opacity -->
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
+							<img src='images/theater.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -28,7 +28,7 @@
 
 							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een grote zaal met podium waar feesten in kunnen worden gehouden voor minimaal 50 mensen. Hier is licht en geluid aanwezig voor theater en muziek.</p>
 
-							<button @click="togglePage()" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</button>
+							<a href="/#/contact" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
 						</div>
 					</div>
@@ -36,10 +36,10 @@
 				<!-- end first box -->
 
 				<!-- start second box -->
-				<div class='row space-outside-up-md'>
+				<div class='row space-outside-up-md' text-inject>
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
+							<img src='images/foyer.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -47,7 +47,7 @@
 
 							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een ruimte met bar om een borrel te houden of een klein feest.</p>
 
-							<button class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</button>
+							<a href="/#/contact"  class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
 						</div>
 					</div>
@@ -55,10 +55,10 @@
 				<!-- end second box -->
 
 				<!-- start third box -->
-				<div class='row space-outside-md'>
+				<div class='row space-outside-md' text-inject>
 					<div class='inline-block bg-light-opacity-lg '>
 						<div class='col-lg-4 reset-padding'>
-							<img src='images/agora5.png' class='border-right border-main sm-border-none xs-border-none' />
+							<img src='images/vergaderruimte.png' class='border-right border-main sm-border-none xs-border-none' />
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
@@ -66,7 +66,7 @@
 
 							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een ruimte voor +/- 10 personen om vergaderingen in te houden. Voorgaand werden hier ook BHV-trainingen in gehouden.</p>
 
-							<button class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</button>
+							<a href="/#/contact" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
 						</div>
 					</div>
@@ -74,36 +74,6 @@
 				<!-- end third box -->
 
 			<!-- end container -->
-		</generic-page>
-
-		<generic-page title="" v-if="show">
-			<div class='container'>
-				
-				<div class='row space-outside-up-md'>
-					<div class='col-lg-12'>
-						<button @click="togglePage()" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">GA TERUG</button>
-					</div>
-				</div>
-				
-				<div class='row space-outside-up-md'>
-					<div class='col-lg-4'>
-						<div class='image'>
-							<img src='images/agora4.png' class='border-right border-main sm-border-none xs-border-none' />
-						</div>
-					</div>
-
-					<div class='col-lg-6'>
-
-						<h1 class='text-color-light xs-font-lg xs-text-center xs-space-outside-up-sm'>Pagina 1</h1>
-
-						<p class='space-outside-up-md text-color-light'>
-							Pagina 1
-						</p>
-
-					</div>
-
-				</div>
-			</div>
 		</generic-page>
 		
 	</div>
@@ -123,9 +93,6 @@
         },
 
         methods: {
-        	togglePage(){
-        		this.show = !this.show;
-        	},
 
         }
     }
