@@ -86,13 +86,11 @@
                   <tr>
                     <td>
                       <label>Genre</label>
-                      <select class='form-control' name='tag'>
                         @foreach($tags as $tag)
-
-                          <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                          <div style='clear:both;'></div>
+                          <input class='space-outside-md' type="checkbox" name='tag[]' value="{{ $tag->id }}"> {{ $tag->name }}
 
                         @endforeach
-                      </select>
                     </td>
                   </tr>
                   <tr>

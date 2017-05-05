@@ -17,6 +17,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
+
         return view('cms.pages.event.index', compact('events'));
     }
 
@@ -51,7 +52,9 @@ class EventController extends Controller
             'price' => $request->get('prijs'),
         ]);
 
-        $event->tags()->attach($request->get('tag'));
+        foreach($request->get('tag') as $tag){
+            $event->tags()->attach($tag); 
+        }
 
         return redirect('cms/event/' . $event->id . '/edit');
     }
@@ -77,15 +80,24 @@ class EventController extends Controller
     public function edit($id)
     {
         $event = Event::find($id);
+        $event_tags = $event->tags; // get all tags from event
+        $tags = Tag::all(); // get all tags
+
+        $not_selected = $tags->diff($event_tags); // alle niet-geselecteerde tags
+
+        $selected = $event_tags->diff($not_selected); // alle geselecteerde tags
 
         $photo = Photo::where([
             ['model_id', $id],
             ['type', 'event']
         ])->first();
 
+
         return view('cms.pages.event.edit', compact(
             'event',
-            'photo'
+            'photo',
+            'selected',
+            'not_selected'
             ));
     }
 

@@ -87,6 +87,35 @@
                     </tr>
                     <tr>
                       <td>
+                        <label>Genre</label>
+
+                        <p><b>Geselecteerde tags:</b></p>
+                        
+                        @foreach($selected as $genre)
+
+                          <!-- Reeds gekozen genres -->
+
+                          <input type='checkbox' value='{{ $genre->id }}' checked /> {{ $genre->name }}
+                          <div style='clear:both;'></div>
+
+                        @endforeach
+
+                        <p><b>Niet-geselecteerde tags:</b></p>
+
+                        @foreach($not_selected as $genre)
+
+                          <!-- Nog niet gekozen genres -->
+
+                          <input type='checkbox' value='{{ $genre->id }}'/> {{ $genre->name }}
+                          <div style='clear:both;'></div>
+                          
+
+                        @endforeach
+
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
                         <label>Starttijd</label>
                         <div class="input-group date">
                           <div class="input-group-addon">
