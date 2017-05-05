@@ -34,7 +34,14 @@
 
           <a :href="'#/agenda/page/' + agendaItem.id"  style="left: 53%; bottom: 10px;" class="font-sm position-bottom-center hidden-xs   text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</a>
 
-          <a :href="'#/agenda/page/' +agendaItem.id"   class="font-sm visible-xs space-outside-sm space-outside-sides-sm  text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light">Lees meer</a>
+          <a :href="'#/agenda/page/' +agendaItem.id"
+            class="
+              font-sm text-uppercase text-color-light
+              visible-xs
+              space-outside-sm space-outside-sides-sm space-inside-sides-sm space-inside-xs
+              bg-accent
+              border-none
+            ">Lees meer</a>
 
 
 
