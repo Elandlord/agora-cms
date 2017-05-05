@@ -28,9 +28,10 @@ Route::get('/', 'DashboardController@index');
 // ------ CUSTOM ROUTES GO UNDERNEATH HERE ----------------
 Route::resource('event', 'API\EventController');
 Route::resource('news', 'API\NewsController');
-
+Route::resource('album', 'API\AlbumController');
 
 // ------ CUSTOM ROUTES FOR SPECIFIC APPROACH ----------------
 Route::get('page/{id}/sections', 'API\SectionController@index');
 Route::get('news/{id}/photo', 'API\NewsPhotoController@index');
+Route::get('album/{id}/photo', 'API\AlbumPhotoController@index');
 Route::get('section/where/{slug}', 'FindSectionsController@index')->where(['slug' => '.*']);

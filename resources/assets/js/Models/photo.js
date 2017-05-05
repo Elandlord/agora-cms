@@ -21,20 +21,20 @@ class Photo extends Model{
 	delete(confirm = false, success) {
 		if(confirm == true) {
 			Notifier.askConfirmation(() => {
-				API.delete('news', this.id);
+				API.delete('photo', this.id);
 				success();
 			});
 		}else{
-			API.delete('news', this.id);
+			API.delete('photo', this.id);
 			success();
 		}
 	}
 
 	static all(success, failure) {
-		API.get('news', (data) => {
+		API.get('photo', (data) => {
 			let all = [];
 			for(let object in data) {
-				let newObject = new News(data[object]);
+				let newObject = new Photo(data[object]);
 				all.push(newObject);
 			}
 			success(all);
@@ -42,20 +42,20 @@ class Photo extends Model{
 	}
 
 	static find(id, success, failure) {
-		API.get('news/' + id, function(data){
-			let news = new News(data);
-			success(news);
-			Event.fire('newsLoaded');
+		API.get('photo/' + id, function(data){
+			let photo = new Photo(data);
+			success(photo);
+			Event.fire('photo:loaded');
 		}, failure);
 	}
 
 	with(relation, factory) {
-		API.get('api/news/' + this.id + '/' + relation, (relationData) => {
-			this[relation] = factory(relationData); 
+		API.get('api/photo/' + this.id + '/' + relation, (relationData) => {
+			this[relation] = factory(relationData);
 		});
 
 	}
 
 }
 
-export default News;
+export default Photo;
