@@ -29,31 +29,31 @@
 				<div class='row'>
 					<div class='col-lg-12'>
 						<h2 class='
-							text-color-light 
-							inline 
-							bg-accent 
-							space-inside-up-sm space-inside-sides-sm 
-							xs-font-sm sm-font-md 
+							text-color-light
+							inline
+							bg-accent
+							space-inside-up-sm space-inside-sides-sm
+							xs-font-sm sm-font-md
 							hidden-xs'>LOCATIE
 						</h2>
 						<h4 class='
-							text-color-light 
-							inline 
-							right 
+							text-color-light
+							inline
+							right
 							space-outside-sides-md sm-space-outside-sides-md-none xs-space-outside-up-xs
 							sm-font-md xs-font-xs'>Rodenburg 1B • 9351 PV Leek
 						</h4>
 						<h4 class='
-							text-color-light 
-							inline 
-							right 
+							text-color-light sm-font-md xs-font-xs
+							inline
+							right
 							space-outside-sides-md xs-space-outside-up-xs
-							sm-font-md xs-font-xs'>Ma - Vr: 09:00 - 17:00
+							'>Ma - Vr: 09:00 - 17:00
 						</h4>
 						<h4 class='
-							text-color-light 
-							inline 
-							right 
+							text-color-light
+							inline
+							right
 							space-outside-sides-md xs-space-outside-up-xs
 							sm-font-md xs-font-xs'>info@agoraleek.nl
 						</h4>

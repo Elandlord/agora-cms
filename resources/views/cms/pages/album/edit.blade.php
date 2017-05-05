@@ -91,18 +91,19 @@
               </form>
             </div>
             <!-- /.box-body -->
-            <div id="app">
-                @if($photo != null)
-                <image-display
-                    id="{{$photo->id}}"
-                    model_id="{{$photo->model_id}}"
-                    type="{{$photo->type}}"
-                    filename="{{$photo->filename}}">
-                </image-display>
 
-                @endif
-                <image-uploader route="photo" model_id="{{$album->id}}" type="album" >
-                    <cropper route="cropper" aspectheight="9" aspectwidth="16" > </cropper>
+              @foreach($photos as $photo)
+                <div class="col-lg-3 thumb">
+                  <a class="thumbnail" href="/photo/album/{{$photo->id}}/edit">
+                    <img src="/images/{{ $photo->type }}/{{ $photo->model_id }}/{{ $photo->filename }}">
+                  </a>
+                </div>
+              @endforeach
+
+
+            <div id="app">
+                <image-uploader route="photo" multi="true" model_id="{{$album->id}}" type="album" >
+                    <cropper route="cropper" multi="true" aspectheight="9" aspectwidth="16" > </cropper>
                 </image-uploader>
             </div>
 

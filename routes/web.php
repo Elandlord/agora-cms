@@ -21,6 +21,7 @@ Route::group(['prefix' => 'cms'],  function () {
         Route::resource('event', 'EventController');
         Route::resource('news', 'NewsController');
         Route::resource('album', 'AlbumController');
+        Route::resource('photo/album', 'PhotoAlbumController');
 
 
     });
