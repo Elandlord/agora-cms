@@ -5,49 +5,17 @@
 
 			<div class='container'>
 				<div class='row space-outside-up-md'>
-					<div class='col-lg-12'>
+					<div v-for="album in albums" >
 
-						<h2 class='text-color-light bg-accent space-inside-sides-sm space-inside-up-xs inline-block'>SONGKWARTIER WEST</h2>
-						
-						<div class='divider bg-accent space-inside-xs'></div>
-
-					</div>
-
-					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-
+						<div class='col-lg-12 space-outside-up-sm'>
+							<h2 class='text-color-light bg-accent space-inside-sides-sm space-inside-up-xs inline-block'>SONGKWARTIER WEST</h2>
+							<div class='divider bg-accent space-inside-xs'></div>
 						</div>
-					</div>
 
-					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-
-						</div>
-					</div>
-
-					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-
-						</div>
-					</div>
-
-					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-
-						</div>
-					</div>
-
-					<div class='col-lg-2'>
-						<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-
-						</div>
-					</div>
-
-					<div class='col-lg-2'>
-						<div class='block bg-dark-lighten-xs pointer' style='min-height: 150px;'>
-
-							<h2 class='text-color-light text-center space-inside-up-lg'>MEER FOTO'S</h2>
-
+						<div v-if="albums != null" v-for="photo in  album.photo"  class='col-lg-2'>
+							<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
+								<img :src="'/images/album/' + album.id + '/1x1/' + photo.filename">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -57,11 +25,29 @@
 
 	</div>
 </template>
-
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+	import Album from '../Models/Album';
+	import Photo from '../Models/Photo';
+  export default {
+  		data() {
+  			return {
+  				albums: null,
+  			}
+  		},
+      mounted() {
+
+      	Album.all((albums) => {
+      		albums.forEach((album) => {
+      			album.with('photo', (photo) => {
+      				return new Photo(photo);
+      			});
+      		});
+      		setTimeout(() => {
+      			this.albums = albums;
+      			console.log(this.albums);
+      		}, 400);
+      		console.log(this.albums);
+      	});
+      }
+  }
 </script>

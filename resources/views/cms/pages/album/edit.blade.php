@@ -103,6 +103,7 @@
               <div id="app">
                   <image-uploader route="photo" multi="true" model_id="{{$album->id}}" type="album" >
                       <cropper route="cropper" multi="true" aspectheight="9" aspectwidth="16" > </cropper>
+                      <cropper route="cropper" multi="true" aspectheight="1" aspectwidth="1" > </cropper>
                   </image-uploader>
               </div>
 
