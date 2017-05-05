@@ -14,6 +14,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse bg-main navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav lg-space-outside-left-xl xs-text-center">
+          <li @click="close()" class='visible-xs'>
+            <router-link tag="li" class='space-outside-left-md space-inside-md' to="/" exact>
+              <a class="bg-main text-color-light font-md">HOME<span class="sr-only">(current)</span></a>
+            </router-link>
+          </li>
           <li @click="close()">
             <router-link tag="li" class='space-outside-left-md space-inside-md' to="/agenda" exact>
               <a class="bg-main text-color-light font-md">AGENDA<span class="sr-only">(current)</span></a>
