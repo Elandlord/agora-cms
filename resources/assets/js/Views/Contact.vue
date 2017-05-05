@@ -63,12 +63,9 @@
 
 
 
-			<div class='container-fluid reset-padding'>
-
+			<div style="max-height: 470px;" class='container-fluid reset-padding no-overflow'>
 				<div class='divider bg-accent space-inside-sm'></div>
-
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2391.6223706268315!2d6.370299815831829!3d53.17081467994258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c835a3911d22df%3A0x4c2e8f57f281cd81!2sRodenburg+1B%2C+9351+PV+Leek!5e0!3m2!1snl!2snl!4v1487273076773" width="100%" height="450" frameborder="0" style="border:0; padding: 0; margin: 0;" allowfullscreen></iframe>
-
 			</div>
 
 		</generic-page>
