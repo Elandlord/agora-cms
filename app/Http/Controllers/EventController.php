@@ -119,6 +119,19 @@ class EventController extends Controller
             'time_end' => $request->get('eindtijd'),
             'price' => $request->get('prijs'),
         ]);
+
+        Event::find($id)->tags()->detach();
+
+        if(isset($request->get('tag')[0])){
+            foreach($request->get('tag') as $tag){
+                Event::find($id)->tags()->attach($tag); 
+            }
+        }
+
+        
+        
+        
+
         return redirect('cms/event');
     }
 

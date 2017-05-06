@@ -89,24 +89,29 @@
                       <td>
                         <label>Genre</label>
 
-                        <p><b>Geselecteerde tags:</b></p>
-                        
+                        @if(!empty($selected[0]))
+                          <p><b>Geselecteerde tags:</b></p>
+                        @endif
+
                         @foreach($selected as $genre)
 
                           <!-- Reeds gekozen genres -->
 
-                          <input type='checkbox' value='{{ $genre->id }}' checked /> {{ $genre->name }}
+
+                          <input type='checkbox' name='tag[]' value='{{ $genre->id }}' checked /> {{ $genre->name }}
                           <div style='clear:both;'></div>
 
                         @endforeach
 
-                        <p><b>Niet-geselecteerde tags:</b></p>
-
+                        @if(!empty($not_selected[0]))
+                          <p><b>Niet-geselecteerde tags:</b></p>
+                        @endif
+                        
                         @foreach($not_selected as $genre)
 
                           <!-- Nog niet gekozen genres -->
 
-                          <input type='checkbox' value='{{ $genre->id }}'/> {{ $genre->name }}
+                          <input type='checkbox' name='tag[]' value='{{ $genre->id }}'/> {{ $genre->name }}
                           <div style='clear:both;'></div>
                           
 
