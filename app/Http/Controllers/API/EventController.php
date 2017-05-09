@@ -22,10 +22,12 @@ class EventController extends Controller
         $searchParameters = $request->input('searchParameters');
 
         if($searchParameters == null){
-            $searchParameters = ' ';
+            $events = Event::where('date', '>=', $today)->orderBy('date', 'ASC')->get();
+        }else{
+            $events = Event::where('date', '>=', $today)->where('title', 'like', "%$searchParameters%")->orderBy('date', 'ASC')->get();
         }
 
-        $events = Event::where('date', '>=', $today)->where('title', 'like', "%$searchParameters%")->orderBy('date', 'ASC')->get();
+        
         return response()->json($events, 200);
     }
 

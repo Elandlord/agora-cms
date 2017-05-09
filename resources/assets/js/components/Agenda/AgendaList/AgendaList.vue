@@ -17,14 +17,14 @@
 
       <div class='row space-outside-md text-center' v-if="loading">
         <i class='fa fa-cog fa-spin fa-5x fa-fw text-color-accent'></i>
-        <h2 class='text-color-accent space-outside-md font-md '>Evenementen laden..</h2>
+        <h2 class='text-color-light space-outside-md font-md '>Evenementen laden..</h2>
       </div>
 
       </div>
       <agenda-headline v-if="agendaHeadline != null && headline == 'yes'" :agendaItem="agendaHeadline"></agenda-headline>
       <agenda-item v-if="agendaItems != null" v-for="item in agendaItems" :trimtext="trimtext"  :agendaItem="item"> </agenda-item>
 
-      <div v-if="agendaItems == null">
+      <div v-if="agendaItems == null || agendaItems.length == 0">
         <h2 class='text-color-light'>Geen geplande evenementen gevonden.</h2>
       </div>
     </div>
@@ -69,6 +69,7 @@
         }else{
           this.agendaItems = agendaItems;  
         }
+
       });
 
     },
@@ -90,6 +91,8 @@
                 }else{
                   this.agendaItems = agendaItems;  
                 }
+
+                console.log(this.agendaItems);
 
               });
 

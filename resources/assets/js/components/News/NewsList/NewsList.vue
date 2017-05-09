@@ -15,12 +15,12 @@
         </div>
         <div class='row space-outside-md text-center' v-if="loading">
             <i class='fa fa-cog fa-spin fa-5x fa-fw text-color-accent'></i>
-            <h2 class='text-color-accent space-outside-md font-md '>Nieuws laden..</h2>
+            <h2 class='text-color-light space-outside-md font-md '>Nieuws laden..</h2>
         </div>
         <news-headline  :news='newsHeadline' ></news-headline>
         <news-item v-for="item in news" :news='item' class='space-outside-up-sm'></news-item>
 
-        <div v-if="news == null">
+        <div v-if="news == null || newsHeadline == undefined">
             <h2 class='text-color-light'>Geen nieuwsberichten gevonden.</h2>
         </div>
     </div>
@@ -41,7 +41,7 @@
     	data() {
 		   return {
 		      news: null,
-              newsHeadline: null,
+          newsHeadline: null,
 		   }
 		},
 
@@ -75,6 +75,8 @@
                     }else{
                         this.news = news;
                     }
+
+                    console.log(this.newsHeadline);
 
                   });
 

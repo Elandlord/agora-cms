@@ -17,12 +17,7 @@ class EventController extends Controller
      */
     public function index()
     {
-
-        $today = date('Y-m-d');
-
-        $searchParameters = $request->input('searchParameters');
-
-        $events = Event::where('date', '>=', $today)->where('name', 'LIKE', '%Mozart%')->get();
+        $events = Event::all();
 
         return view('cms.pages.event.index', compact('events'));
     }

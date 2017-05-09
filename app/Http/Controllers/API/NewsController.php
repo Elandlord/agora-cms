@@ -22,10 +22,12 @@ class NewsController extends Controller
         $searchParameters = $request->input('searchParameters');
 
         if($searchParameters == null){
-            $searchParameters = ' ';
+            $news = News::orderBy('publish_date', 'ASC')->get();
+        }else{
+            $news = News::where('title', 'LIKE', "%$searchParameters%")->orderBy('publish_date', 'ASC')->get();
         }
 
-        $news = News::where('title', 'LIKE', "%$searchParameters%")->orderBy('publish_date', 'ASC')->get();
+        
         return response()->json($news, 200);
     }
 
