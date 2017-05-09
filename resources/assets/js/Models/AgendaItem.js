@@ -34,6 +34,17 @@ class AgendaItem extends Model{
     }, failure);
   }
 
+  static search(searchParameters, success, failure){
+      API.get('event?searchParameters=' + searchParameters, (data) => {
+      let all = [];
+      for(let object in data) {
+        let newObject = new AgendaItem(data[object]);
+        all.push(newObject);
+      }
+      success(all);
+    }, failure);
+  }
+
   static find(id, success, failure) {
     API.get('event/' + id + '/edit', function(data){
       let agendaItem = new AgendaItem(data);

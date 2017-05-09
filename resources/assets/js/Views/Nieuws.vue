@@ -6,7 +6,7 @@
 				<div class='row space-outside-up-md'>
 					<div class='col-lg-6'>
 
-						<news-list>
+						<news-list search='yes'>
 
 							<news-headline slot='news-headline'></news-headline>
 

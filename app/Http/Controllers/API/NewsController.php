@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\News;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
@@ -14,10 +15,18 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $news = News::all();
-        return response()->json($news);
+        $today = Carbon::today()->format('Y-m-d');
+
+        $searchParameters = $request->input('searchParameters');
+
+        if($searchParameters == null){
+            $searchParameters = ' ';
+        }
+
+        $news = News::where('title', 'LIKE', "%$searchParameters%")->orderBy('publish_date', 'ASC')->get();
+        return response()->json($news, 200);
     }
 
     /**

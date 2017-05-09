@@ -2,8 +2,31 @@
 <div>
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="row ">
+      <div v-if="agendaItems != null && search == 'yes'">
+        <div class='col-lg-8 space-outside-md'>
+          <input v-model="searchParameters" type='text' placeholder='Trefwoord..' class='
+                              form-control 
+                              bg-none
+                              text-color-light
+                              space-outside-up-xs
+                              '/>
+        </div>
+        <div class='col-lg-4 space-outside-md'>
+          <button class="font-md text-uppercase space-inside-sides-md space-inside-sm bg-accent border-none text-color-light" @click="searchEvents()">Zoeken</button>
+        </div>
+
+      <div class='row space-outside-md text-center' v-if="loading">
+        <i class='fa fa-cog fa-spin fa-5x fa-fw text-color-accent'></i>
+        <h2 class='text-color-accent space-outside-md font-md '>Evenementen laden..</h2>
+      </div>
+
+      </div>
       <agenda-headline v-if="agendaHeadline != null && headline == 'yes'" :agendaItem="agendaHeadline"></agenda-headline>
       <agenda-item v-if="agendaItems != null" v-for="item in agendaItems" :trimtext="trimtext"  :agendaItem="item"> </agenda-item>
+
+      <div v-if="agendaItems == null">
+        <h2 class='text-color-light'>Geen geplande evenementen gevonden.</h2>
+      </div>
     </div>
   </div>
 </div>
@@ -21,6 +44,9 @@
       headline: null,
       trimtext: null,
       limit: null,
+      search: null,
+      searchParameters: null,
+      loading: false,
     },
     data() {
       return {
@@ -45,7 +71,39 @@
         }
       });
 
-    }
+    },
+
+    methods:
+      {
+        searchEvents(){
+            if(this.searchParameters.length >= 3){
+              this.loading = true;
+
+              AgendaItem.search(this.searchParameters, (agendaItems) => {
+
+                if(this.headline != null){
+                  this.agendaHeadline = agendaItems.shift();
+                }
+
+                if(this.limit != null){
+                  this.agendaItems = agendaItems.splice(0, this.limit);
+                }else{
+                  this.agendaItems = agendaItems;  
+                }
+
+              });
+
+              setTimeout(() => {
+                this.loading = false;
+              }, 500);
+            }else{
+              alert('Minimaal 3 tekens invoeren.');
+            }
+
+
+        }
+
+      },
 
   }
 

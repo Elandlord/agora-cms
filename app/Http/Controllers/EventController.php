@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\Tag;
 use App\Photo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\EventRequest;
 class EventController extends Controller
@@ -16,7 +17,12 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+
+        $today = date('Y-m-d');
+
+        $searchParameters = $request->input('searchParameters');
+
+        $events = Event::where('date', '>=', $today)->where('name', 'LIKE', '%Mozart%')->get();
 
         return view('cms.pages.event.index', compact('events'));
     }

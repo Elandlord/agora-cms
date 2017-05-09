@@ -45,6 +45,17 @@ class News extends Model{
 		}, failure);
 	}
 
+	static search(searchParameters, success, failure){
+	      API.get('news?searchParameters=' + searchParameters, (data) => {
+	      let all = [];
+	      for(let object in data) {
+	        let newObject = new News(data[object]);
+	        all.push(newObject);
+	      }
+	      success(all);
+	    }, failure);
+  	}
+
 	with(relation, factory) {
 		API.get('news/' + this.id + '/' + relation, (relationData) => {
 			this[relation] = factory(relationData);

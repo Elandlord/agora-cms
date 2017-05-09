@@ -14,9 +14,18 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $events = Event::where('date', '>', Carbon::now()->format('yyyy-mm-dd'))->orderBy('date', 'ASC')->get();
+
+        $today = Carbon::today()->format('Y-m-d');
+
+        $searchParameters = $request->input('searchParameters');
+
+        if($searchParameters == null){
+            $searchParameters = ' ';
+        }
+
+        $events = Event::where('date', '>=', $today)->where('title', 'like', "%$searchParameters%")->orderBy('date', 'ASC')->get();
         return response()->json($events, 200);
     }
 
