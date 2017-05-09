@@ -43,8 +43,6 @@
         }else{
           this.agendaItems = agendaItems;  
         }
-
-        console.log(this.agendaItems);
       });
 
     }
