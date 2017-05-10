@@ -23,10 +23,9 @@
       <agenda-headline v-if="agendaHeadline != null && headline == 'yes'" :agendaItem="agendaHeadline"></agenda-headline>
       <agenda-item v-if="agendaItems != null" v-for="item in agendaItems" :trimtext="trimtext"  :agendaItem="item"> </agenda-item>
 
-      <div v-if="agendaItems == null || agendaItems.length == 0">
+      <div v-if="agendaItems == null">
         <h2 class='text-color-light'>Geen geplande evenementen gevonden.</h2>
       </div>
-
     </div>
   </div>
 </div>
