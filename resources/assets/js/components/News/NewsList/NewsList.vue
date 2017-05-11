@@ -34,14 +34,14 @@
         props: {
          limit: null,
          search: null,
-         searchParameters: null,
-         loading: false,
         },
 
     	data() {
 		   return {
 		      news: null,
           newsHeadline: null,
+          searchParameters: null,
+          loading: false,
 		   }
 		},
 
@@ -75,9 +75,6 @@
                     }else{
                         this.news = news;
                     }
-
-                    console.log(this.newsHeadline);
-
                   });
 
                   setTimeout(() => {
@@ -86,9 +83,6 @@
                 }else{
                   alert('Minimaal 3 tekens invoeren.');
                 }
-
-                
-
             }
 
           },

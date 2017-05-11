@@ -44,13 +44,13 @@
       trimtext: null,
       limit: null,
       search: null,
-      searchParameters: null,
-      loading: false,
     },
     data() {
       return {
         agendaItems: null,
         agendaHeadline: null,
+        searchParameters: null,
+        loading: false,
       }
     },
 
@@ -91,7 +91,10 @@
                   this.agendaItems = agendaItems;  
                 }
 
+                console.log(this.agendaItems);
+
               });
+
 
               setTimeout(() => {
                 this.loading = false;
