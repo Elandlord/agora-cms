@@ -7,14 +7,14 @@
 				<div class='row space-outside-up-md'>
 					<div v-for="album in albums" >
 
-						<div class='col-lg-12 space-outside-up-sm'>
+						<div class='col-lg-12 space-outside-up-sm reset-padding'>
 							<h2 class='text-color-light bg-accent space-inside-sides-sm space-inside-up-xs inline-block'>SONGKWARTIER WEST</h2>
 							<div class='divider bg-accent space-inside-xs'></div>
 						</div>
 
-						<div v-if="albums != null" v-for="photo in  album.photo"  class='col-lg-2'>
+						<div v-if="albums != null" v-for="photo in  album.photo"  class='col-lg-2 reset-padding space-inside-sides-xs'>
 							<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-								<img :src="'/images/album/' + album.id + '/1x1/' + photo.filename">
+								<img @click="displayAlbum()" :src="'/images/album/' + album.id + '/1x1/' + photo.filename">
 							</div>
 						</div>
 					</div>
@@ -35,19 +35,31 @@
   			}
   		},
       mounted() {
+      	this.init();
+      },
+      methods: {
+      	init() {
+      		this.initData();
+      	},
 
-      	Album.all((albums) => {
-      		albums.forEach((album) => {
-      			album.with('photo', (photo) => {
-      				return new Photo(photo);
-      			});
-      		});
-      		setTimeout(() => {
-      			this.albums = albums;
-      			console.log(this.albums);
-      		}, 400);
-      		console.log(this.albums);
-      	});
+      	initData() {
+      		Album.all((albums) => {
+	      		albums.forEach((album) => {
+	      			album.with('photo', (photos) => {
+
+	      				return photos.map((photo) => {
+	      					return new Photo(photo);
+	      				});
+
+	      			});
+	      		});
+	      		setTimeout(() => {
+	      			this.albums = albums;
+	      			console.log(this.albums);
+	      		}, 400);
+	      		console.log(this.albums);
+	      	});
+      	},
       }
   }
 </script>

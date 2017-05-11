@@ -3,7 +3,7 @@
         <div v-if="news != null && search == 'yes'">
             <div class='col-lg-8 space-outside-md'>
               <input v-model="searchParameters" type='text' placeholder='Trefwoord..' class='
-                                  form-control 
+                                  form-control
                                   bg-none
                                   text-color-light
                                   space-outside-up-xs
@@ -20,7 +20,7 @@
         <news-headline  :news='newsHeadline' ></news-headline>
         <news-item v-for="item in news" :news='item' class='space-outside-up-sm'></news-item>
 
-        <div v-if="news == null || newsHeadline == undefined">
+        <div class="text-center" v-if="isVisible">
             <h2 class='text-color-light'>Geen nieuwsberichten gevonden.</h2>
         </div>
     </div>
@@ -42,6 +42,7 @@
           newsHeadline: null,
           searchParameters: null,
           loading: false,
+          isVisible: false,
 		   }
 		},
 
@@ -49,8 +50,13 @@
             console.log('Component mounted.');
 
             News.all((news) => {
-                this.newsHeadline = news.shift();
+                if(news.length == 0) {
+                  this.isVisible = true;
+                } else {
+                  this.isVisible = false;
+                }
 
+                this.newsHeadline = news.shift();
                 if(this.limit != null){
                     this.news = news.splice(0, this.limit);
                 }else{
@@ -67,6 +73,11 @@
                   this.loading = true;
 
                   News.search(this.searchParameters, (news) => {
+                    if(news.length == 0) {
+                      this.isVisible = true;
+                    } else {
+                      this.isVisible = false;
+                    }
 
                     this.newsHeadline = news.shift();
 

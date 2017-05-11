@@ -24,10 +24,15 @@ class EventController extends Controller
         if($searchParameters == null){
             $events = Event::where('date', '>=', $today)->orderBy('date', 'ASC')->get();
         }else{
-            $events = Event::where('date', '>=', $today)->where('title', 'like', "%$searchParameters%")->orderBy('date', 'ASC')->get();
+            $events = Event::where([
+                ['date', '>=', $today],
+                ['title', 'like', "%$searchParameters%"],
+            ])->orWhere([
+                ['date', '>=', $today],
+                ['description', 'like', "%$searchParameters%"],
+            ])->orderBy('date', 'ASC')->get();
         }
 
-        
         return response()->json($events, 200);
     }
 

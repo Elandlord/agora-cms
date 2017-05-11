@@ -5,7 +5,7 @@
       <div v-if="agendaItems != null && search == 'yes'">
         <div class='col-lg-8 space-outside-md'>
           <input v-model="searchParameters" type='text' placeholder='Trefwoord..' class='
-                              form-control 
+                              form-control
                               bg-none
                               text-color-light
                               space-outside-up-xs
@@ -23,7 +23,7 @@
       <agenda-headline v-if="agendaHeadline != null && headline == 'yes'" :agendaItem="agendaHeadline"></agenda-headline>
       <agenda-item v-if="agendaItems != null" v-for="item in agendaItems" :trimtext="trimtext"  :agendaItem="item"> </agenda-item>
 
-      <div v-if="agendaItems == null">
+      <div class="text-center" v-if="isVisible">
         <h2 class='text-color-light'>Geen geplande evenementen gevonden.</h2>
       </div>
     </div>
@@ -51,6 +51,7 @@
         agendaHeadline: null,
         searchParameters: null,
         loading: false,
+        isVisible: false,
       }
     },
 
@@ -58,6 +59,11 @@
       console.log('agenda-list component is mounted');
 
       AgendaItem.all((agendaItems) => {
+        if(agendaItems.length == 0) {
+          this.isVisible = true;
+        } else {
+          this.isVisible = false;
+        }
 
         if(this.headline != null){
           this.agendaHeadline = agendaItems.shift();
@@ -66,7 +72,7 @@
         if(this.limit != null){
           this.agendaItems = agendaItems.splice(0, this.limit);
         }else{
-          this.agendaItems = agendaItems;  
+          this.agendaItems = agendaItems;
         }
 
       });
@@ -81,6 +87,12 @@
 
               AgendaItem.search(this.searchParameters, (agendaItems) => {
 
+                if(agendaItems.length == 0) {
+                  this.isVisible = true;
+                } else {
+                  this.isVisible = false;
+                }
+
                 if(this.headline != null){
                   this.agendaHeadline = agendaItems.shift();
                 }
@@ -88,10 +100,9 @@
                 if(this.limit != null){
                   this.agendaItems = agendaItems.splice(0, this.limit);
                 }else{
-                  this.agendaItems = agendaItems;  
+                  this.agendaItems = agendaItems;
                 }
 
-                console.log(this.agendaItems);
 
               });
 
