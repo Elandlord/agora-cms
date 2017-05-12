@@ -3,7 +3,7 @@
 
 		<generic-page title="FOTO'S">
 
-			<div class='container'>
+			<div v-if="isVisible" class='container'>
 				<div class='row space-outside-up-md'>
 					<div v-for="album in albums" >
 
@@ -14,7 +14,7 @@
 
 						<div v-if="albums != null" v-for="photo in  album.photo"  class='col-lg-2 reset-padding space-inside-sides-xs'>
 							<div class='block bg-light-opacity-md pointer' style='min-height: 150px;'>
-								<img @click="displayAlbum()" :src="'/images/album/' + album.id + '/1x1/' + photo.filename">
+								<img @click="displayAlbum(album)" :src="'/images/album/' + album.id + '/1x1/' + photo.filename">
 							</div>
 						</div>
 					</div>
@@ -22,7 +22,7 @@
 			</div>
 
 		</generic-page>
-
+		<album-display> </album-display>
 	</div>
 </template>
 <script>
@@ -32,6 +32,7 @@
   		data() {
   			return {
   				albums: null,
+  				isVisible: true,
   			}
   		},
       mounted() {
@@ -41,7 +42,10 @@
       	init() {
       		this.initData();
       	},
-
+      	displayAlbum(album){
+      		this.isVisible = false;
+      		Event.fire('album:display', album);
+      	},
       	initData() {
       		Album.all((albums) => {
 	      		albums.forEach((album) => {
@@ -53,6 +57,7 @@
 
 	      			});
 	      		});
+
 	      		setTimeout(() => {
 	      			this.albums = albums;
 	      			console.log(this.albums);

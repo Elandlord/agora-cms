@@ -1,7 +1,7 @@
 require('./bootstrap');
 require('./admin-lte'); // pulls in the admin-lte2 admin dashboard
 require('./Core/Classes'); // Pulls in some helper classes
-
+require('owl-carousel-2/owl.carousel');
 
 
 // Core components
@@ -26,6 +26,11 @@ Vue.component('news-page', require('./components/News/ClickPage/Page.vue'));
 Vue.component('agenda-list', require('./components/Agenda/AgendaList/AgendaList.vue'));
 Vue.component('agenda-item', require('./components/Agenda/AgendaItem/AgendaItem.vue'));
 Vue.component('agenda-headline', require('./components/Agenda/AgendaHeadline/AgendaHeadline.vue'));
+
+Vue.component('album-display', require('./components/AlbumDisplay/AlbumDisplay.vue'));
+// image slider
+Vue.component('image-slider', require('./components/image-sliders/owl-image-slider.vue'));
+Vue.component('slide', require('./components/image-sliders/slide-types/basic-slide.vue'));
 
 // News components
 Vue.component('news-list', require('./components/News/NewsList/NewsList.vue'));
