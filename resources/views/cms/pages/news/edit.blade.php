@@ -121,7 +121,9 @@
                 </image-display>
 
                 @endif
+
                 <image-uploader route="photo"  model_id="{{$news->id}}" type="news" >
+                    <p slot="description">U kan hieronder een nieuwe foto uploaden in de formaten( JPG en PNG ) met een maximum bestandsgrootte van 2MB. </p>
                     <cropper route="cropper"  aspectheight="1" aspectwidth="1" > </cropper>
                     <cropper route="cropper"  aspectheight="11" aspectwidth="16" > </cropper>
                 </image-uploader>
