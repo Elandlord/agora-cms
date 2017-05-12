@@ -96,7 +96,6 @@
                 <div class="row">
                   <image-uploader route="photo" multi="true" model_id="{{$album->id}}" type="album" >
                       <p slot="description">U kan hieronder een nieuwe foto uploaden in de formaten( JPG en PNG ) met een maximum bestandsgrootte van 2MB. </p>
-                      <cropper route="cropper" multi="true" aspectheight="9" aspectwidth="16" > </cropper>
                       <cropper route="cropper" multi="true" aspectheight="1" aspectwidth="1" > </cropper>
                       <cropper route="cropper" multi="true" aspectheight="11" aspectwidth="16" > </cropper>
                   </image-uploader>

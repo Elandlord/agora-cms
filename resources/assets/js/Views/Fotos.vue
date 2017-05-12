@@ -21,8 +21,8 @@
 				</div>
 			</div>
 
-		</generic-page>
 		<album-display> </album-display>
+		</generic-page>
 	</div>
 </template>
 <script>

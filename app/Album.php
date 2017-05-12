@@ -11,4 +11,6 @@ class Album extends Model
       'body',
       'date',
     ];
+
+
 }
