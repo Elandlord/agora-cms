@@ -2,7 +2,7 @@ require('./bootstrap');
 require('./admin-lte'); // pulls in the admin-lte2 admin dashboard
 require('./Core/Classes'); // Pulls in some helper classes
 require('owl-carousel-2/owl.carousel');
-require('ekko-lightbox/dist/ekko-lightbox.min.js');
+
 
 // Core components
 Vue.component('image-display', require('./components/ImageDisplay.vue'));

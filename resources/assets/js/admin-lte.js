@@ -1,5 +1,6 @@
 require('jquery');
 require('bootstrap-sass');
+require('ekko-lightbox/dist/ekko-lightbox.min.js');
 require('fastclick');
 require('jquery-slimscroll');
 require('admin-lte');
