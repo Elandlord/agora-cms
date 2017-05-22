@@ -24,9 +24,9 @@
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
-							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>THEATER</h3>
+							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>ONDER CONSTRUCTIE</h3>
 
-							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een grote zaal met podium waar feesten in kunnen worden gehouden voor minimaal 50 mensen. Hier is licht en geluid aanwezig voor theater en muziek.</p>
+							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Onder constructie</p>
 
 							<a href="/#/contact" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
@@ -43,9 +43,9 @@
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
-							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>FOYER</h3>
+							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>ONDER CONSTRUCTIE</h3>
 
-							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een ruimte met bar om een borrel te houden of een klein feest.</p>
+							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Onder constructie</p>
 
 							<a href="/#/contact"  class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
@@ -62,9 +62,9 @@
 						</div>
 						<div class='col-lg-6 reset-padding'>
 
-							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>VERGADERRUIMTE</h3>
+							<h3 class='text-color-light inline-block bg-main space-inside-sm space-inside-sides-sm'>ONDER CONSTRUCTIE</h3>
 
-							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Een ruimte voor +/- 10 personen om vergaderingen in te houden. Voorgaand werden hier ook BHV-trainingen in gehouden.</p>
+							<p class='text-color-light space-inside-sm space-inside-sides-sm'>Onder constructie</p>
 
 							<a href="/#/contact" class="font-sm text-uppercase space-inside-sides-sm space-inside-xs bg-accent border-none text-color-light inline space-outside-sm space-outside-sides-sm">MEER INFO</a>
 
