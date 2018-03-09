@@ -1,3 +1,8 @@
+## CMS voor Agora Cultureel Centrum Leek
+
+Gerealiseerd door <a href="https://mentechmedia.nl">MEN Technology & Media</a>
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
